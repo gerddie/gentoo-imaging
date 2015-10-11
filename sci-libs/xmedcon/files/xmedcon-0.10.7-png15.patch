@@ -1,0 +1,53 @@
+diff -ru xmedcon-0.10.7/source/m-png.c xmedcon-0.10.7.ew//source/m-png.c
+--- xmedcon-0.10.7/source/m-png.c	2010-08-29 01:44:23.000000000 +0200
++++ xmedcon-0.10.7.ew//source/m-png.c	2011-10-17 00:42:08.000000000 +0200
+@@ -65,7 +65,7 @@
+ 
+   if (!png_ptr) return; 
+ 
+-  longjmp(png_ptr->jmpbuf, 1);
++  longjmp(png_jmpbuf(png_ptr), 1);
+ }
+ 
+ static void MdcPngWarn(png_structp png_ptr, png_const_charp warning_msg)
+@@ -102,6 +102,9 @@
+   int bit_depth, color_type, transform, num_palette;
+   Uint8 *imgRGB, *pbuf;
+   IMG_DATA *id;
++  png_textp textp;
++  int num_text = 0; 
++
+ 
+   if (MDC_PROGRESS) MdcProgress(MDC_PROGRESS_BEGIN,0.,"Reading PNG:");
+ 
+@@ -161,21 +164,23 @@
+   }
+ 
+   /* get comment */
+-  if(info_ptr->num_text > 0) {
++  png_get_text(png_ptr, info_ptr, &textp, &num_text); 
++
++  if(num_text > 0) {
+     commentsize = 1;
+ 
+-    for(i = 0; i < info_ptr->num_text; i++)
+-      commentsize += strlen(info_ptr->text[i].key) + 1 +
+-                     info_ptr->text[i].text_length + 2;
++    for(i = 0; i < num_text; i++)
++      commentsize += strlen(textp[i].key) + 1 +
++                     textp[i].text_length + 2;
+     
+     if ((fi->comment = malloc(commentsize)) == NULL) {
+       MdcPngWarn(png_ptr,"PNG  Can't malloc comment string");
+     }else{ 
+       fi->comment[0] = '\0';
+-      for (i = 0; i < info_ptr->num_text; i++) {
+-        strcat(fi->comment, info_ptr->text[i].key);
++      for (i = 0; i < num_text; i++) {
++        strcat(fi->comment, textp[i].key);
+         strcat(fi->comment, "::");
+-        strcat(fi->comment, info_ptr->text[i].text);
++        strcat(fi->comment, textp[i].text);
+         strcat(fi->comment, "\n");
+       }
+     }

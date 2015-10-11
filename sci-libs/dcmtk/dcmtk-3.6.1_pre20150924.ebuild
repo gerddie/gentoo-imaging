@@ -33,7 +33,7 @@ S=${WORKDIR}/${PN}-${MY_PV}
 src_configure() {
 	mycmakeargs="${mycmakeargs}
 		-DBUILD_SHARED_LIBS=ON
-		-DCMAKE_INSTALL_PREFIX=/
+		-DCMAKE_INSTALL_PREFIX=/usr
 		$(cmake-utils_use tiff DCMTK_WITH_TIFF)
 		$(cmake-utils_use png DCMTK_WITH_PNG)
 		$(cmake-utils_use xml DCMTK_WITH_XML)

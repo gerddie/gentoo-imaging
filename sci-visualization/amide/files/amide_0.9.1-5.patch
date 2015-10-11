@@ -1,0 +1,92 @@
++diff -urNad amide-0.9.1~/src/Makefile.am amide-0.9.1/src/Makefile.am
++--- amide-0.9.1~/src/Makefile.am	2009-02-18 10:35:54.000000000 -0500
+++++ amide-0.9.1/src/Makefile.am	2009-02-18 10:38:05.000000000 -0500
++@@ -23,13 +23,11 @@
++ 	$(GSL_CFLAGS) \
++ 	$(LIBFAME_CFLAGS) \
++ 	$(AMIDE_GTK_CFLAGS) \
++-	$(AMIDE_DEBUG_CFLAGS) \
++ 	$(AMIDE_LIBDCMDATA_CFLAGS) \
++-	-I/usr/local/include \
++ 	$(XMEDCON_CFLAGS) \
++-	-DG_DISABLE_DEPRECATED \
++-	-DGTK_DISABLE_DEPRECATED 
+++	-DG_DISABLE_DEPRECATED
++ 
+++##	-DGTK_DISABLE_DEPRECATED
++ ##	-DGNOME_DISABLE_DEPRECATED 
++ 
++ 
++diff -urNad amide-0.9.1~/configure.in amide-0.9.1/configure.in
++--- amide-0.9.1~/configure.in	2009-02-18 10:43:01.000000000 -0500
+++++ amide-0.9.1/configure.in	2009-02-18 10:44:01.000000000 -0500
++@@ -42,9 +42,9 @@
++ dnl =====================================================================
++ dnl pick our optimization level, OSX's version of gcc doesn't handle -O6
++ case "$host_os" in
++-darwin*) 	CFLAGS="-g -O2 -Wall";;
++-*)		CFLAGS="-g -O6 -Wall"
++-		CXXFLAGS="-g -O6 -Wall";;
+++darwin*) 	CFLAGS="-O2 -Wall";;
+++*)		CFLAGS="-O6 -Wall"
+++		CXXFLAGS="-O6 -Wall";;
++ esac
++ 
++ if test $CC = "gcc"; then
++@@ -61,7 +61,7 @@
++ 	read continue_with_bad_gcc
++ 	if test $continue_with_bad_gcc = "y"; then
++ 		echo "removing optimizations to reduce potential of compiler error"
++-		CFLAGS="-g -O0"
+++		CFLAGS="-O0"
++ 	else
++ 		exit 1
++ 	fi
++@@ -84,16 +84,16 @@
++ 
++ dnl check for various libraries and programs that we might need
++ AM_PATH_GSL(1.1.1, FOUND_LIBGSL=yes, FOUND_LIBGSL=no)
++-AC_CHECK_LIB(ecat, matrix_open, FOUND_LIBECAT=yes, FOUND_LIBECAT=no, -L/sw/lib)
++-AC_CHECK_LIB(volpack, vpGetErrorString, FOUND_VOLPACK=yes, FOUND_VOLPACK=no, -lm -L/sw/lib -L/usr/local/lib)
+++AC_CHECK_LIB(ecat, matrix_open, FOUND_LIBECAT=yes, FOUND_LIBECAT=no)
+++AC_CHECK_LIB(volpack, vpGetErrorString, FOUND_VOLPACK=yes, FOUND_VOLPACK=no, -lm)
++ AM_PATH_XMEDCON(0.10.0, FOUND_XMEDCON=yes, FOUND_XMEDCON=no)
++-AM_PATH_LIBFAME(0.9.1, FOUND_LIBFAME=yes, FOUND_LIBFAME=no)
+++dnl AM_PATH_LIBFAME(0.9.1, FOUND_LIBFAME=yes, FOUND_LIBFAME=no)
++ dnl AC_CHECK_LIB(libfame, fame_init, FOUND_LIBFAME=yes, FOUND_LIBFAME=no)
++ 
++ dnl switch to C++ for DCMTK library stuff - also, if pthread is on the platform, probably need that
++ AC_LANG_CPLUSPLUS
++ AC_CHECK_LIB(pthread, pthread_mutex_init, THREAD_LIBS="-lpthread", THREAD_LIBS="")
++-AC_CHECK_LIB(dcmdata, main, FOUND_DCMDATA=yes, FOUND_DCMDATA=no, -lofstd  -lz -L/usr/local/dicom/lib -L/sw/lib $THREAD_LIBS)
+++AC_CHECK_LIB(dcmdata, main, FOUND_DCMDATA=yes, FOUND_DCMDATA=no, -lofstd  -lz $THREAD_LIBS)
++ 
++ 
++ dnl Let people compile without debugging information
++@@ -171,7 +171,7 @@
++ 	AC_DEFINE(AMIDE_LIBMDC_SUPPORT, 1, Define to compile with (X)MedCon)
++ 
++ 	dnl 2007.10.28 - new xmedcon's should be using glib2/gtk2, dont' have to overwrite XMEDCON_LIBS
++-	dnl XMEDCON_LIBS="-L/usr/local/lib -L/usr/local/xmedcon/lib -lmdc"
+++	dnl XMEDCON_LIBS="-lmdc"
++ 	AC_SUBST(XMEDCON_LIBS)
++ else
++ 	echo "Compiling without xmedcon/libmdc file support"
++@@ -218,8 +218,8 @@
++ 
++ if (test $enable_libdcmdata = yes) && (test $FOUND_DCMDATA = yes); then
++ 	echo "Compiling with DCMTK support for DICOM files"
++-	AMIDE_LIBDCMDATA_LIBS="-L/usr/local/dicom/lib -ldcmdata -lofstd -lz $THREAD_LIBS"
++-	AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/dicom/include/dcmtk/dcmdata -I/usr/local/dicom/include/dcmtk/ofstd -I/usr/local/dicom/include -I/usr/include/dcmtk/dcmdata -I/usr/local/include/dcmtk/ofstd -I/sw/include/dcmtk/dcmdata -I/sw/include/dcmtk/ofstd -I/sw/include/dcmtk"
+++	AMIDE_LIBDCMDATA_LIBS="-ldcmdata -lofstd -lz $THREAD_LIBS"
+++	AMIDE_LIBDCMDATA_CFLAGS="-I/usr/include/dcmtk/dcmdata"
++ 	AC_SUBST(AMIDE_LIBDCMDATA_LIBS)
++ 	AC_SUBST(AMIDE_LIBDCMDATA_CFLAGS)
++ 	AC_DEFINE(AMIDE_LIBDCMDATA_SUPPORT, 1, Define to compile with DCMTK)
++@@ -351,6 +351,3 @@
++ dnl help/C/Makefile
++ dnl help/es/Makefile
++ 
++-dnl Move the spec file so it won't get eaten by make distclean
++-echo "Moving SPEC file to base directory"
++-mv etc/amide.spec ./
