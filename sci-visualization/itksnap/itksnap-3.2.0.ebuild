@@ -4,7 +4,7 @@
 
 EAPI="3"
 
-inherit eutils toolchain-funcs cmake-utils
+inherit eutils toolchain-funcs cmake-utils flag-o-matic
 
 DESCRIPTION="ITK snap tool for segmentation of medical data"
 HOMEPAGE="http://www.itksnap.org"
@@ -16,6 +16,9 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
+append-cxxflags -fPIC -funroll-loops
+
+
 RDEPEND="sci-libs/itk[itkv3compat]
 		 >=sci-libs/vtk-6.2
 		 >=dev-qt/qtgui-5.4
@@ -24,6 +27,7 @@ RDEPEND="sci-libs/itk[itkv3compat]
 		 >=dev-qt/qtcore-5.4
 		 >=dev-qt/qtconcurrent-5.4
 		 >=dev-qt/qtnetwork-5.4
+		 >=dev-qt/qtdeclarative-5.4
 		 media-libs/libpng
 		 virtual/jpeg
 		"
