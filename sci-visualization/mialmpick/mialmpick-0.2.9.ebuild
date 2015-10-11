@@ -2,11 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI="3"
+
 inherit autotools eutils
 
 DESCRIPTION="3D surface renderer for CT data"
 HOMEPAGE="http://mia.sourceforge.net"
-SRC_URI="mirror://sourceforge/mia/${P}.tgz"
+SRC_URI="mirror://sourceforge/mia/${P}.tar.xz"
 
 LICENSE="GPL"
 SLOT="0"
