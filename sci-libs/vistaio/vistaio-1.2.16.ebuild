@@ -12,6 +12,5 @@ RESTRICT="primaryuri"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 amd64 ~ppc"
+KEYWORDS="~x86 ~amd64"
 DEPENDS="app-arch/xz-utils"
-

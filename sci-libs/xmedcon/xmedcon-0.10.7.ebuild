@@ -22,7 +22,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 #KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86"
-KEYWORDS="~amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="png gtk"
 
 DEPEND="gtk? ( >=x11-libs/gtk+-2.0 )
@@ -54,5 +54,3 @@ src_install() {
 	rm ${D}/etc/xmedcon.png
 	rm ${D}/etc/xmedconrc.win32
 }
-
-

@@ -22,11 +22,11 @@ RESTRICT="primaryuri"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 #KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86"
-KEYWORDS="x86 ~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE="png gtk"
 
 DEPEND="gtk? ( >=x11-libs/gtk+-2 )
-        png? ( >=media-libs/libpng-1.2.1 )"
+		png? ( >=media-libs/libpng-1.2.1 )"
 
 src_compile() {
 
@@ -47,4 +47,3 @@ src_install() {
 	insinto /usr/share/pixmaps
 	doins ${D}/etc/xmedcon.png
 }
-
