@@ -17,5 +17,5 @@ DEPENDS="app-arch/xz-utils
 	"
 
 RDEPENDS="dev-libs/glib:2
-		  dev-libs/libxml2
-		"
+           dev-libs/libxml2
+	"
