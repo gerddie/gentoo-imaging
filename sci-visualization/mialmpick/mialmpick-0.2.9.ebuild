@@ -10,7 +10,7 @@ DESCRIPTION="3D surface renderer for CT data"
 HOMEPAGE="http://mia.sourceforge.net"
 SRC_URI="mirror://sourceforge/mia/${P}.tar.xz"
 
-LICENSE="GPL"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
