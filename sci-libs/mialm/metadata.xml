@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <herd>science</herd>
+  <herd>sci</herd>
   <maintainer>
     <email>gw.fossdev@gmail.com</email>
   </maintainer>
