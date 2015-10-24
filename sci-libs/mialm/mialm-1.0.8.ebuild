@@ -8,7 +8,7 @@ HOMEPAGE="http://mia.sf.net/"
 SRC_URI="mirror://sourceforge/mia/mialm-${PV}.tar.xz"
 RESTRICT="primaryuri"
 
-LICENSE="BSD"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 DEPENDS="app-arch/xz-utils
