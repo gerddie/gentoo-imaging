@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="3"
 
@@ -10,7 +10,7 @@ DESCRIPTION="The NIFTI IO Library"
 HOMEPAGE="http://sourceforge.net/projects/niftilib/"
 SRC_URI="mirror://gentoo/${P}.tar.gz"
 SRC_URI="mirror://sourceforge/niftilib/${P}.tar.gz"
-LICENSE="PUBLIC DOMAIN"
+LICENSE="public-domain"
 
 KEYWORDS="~amd64 ~x86"
 SLOT="0"

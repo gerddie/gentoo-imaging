@@ -1,0 +1,5 @@
+*nifticlib-2.0.0 (24 Oct 2015)
+
+  01 Nov 2015;  <gw.fossdev@gmail.com> nifticlib-2.0.0.ebuild:
+  correct ebuild to satisfy repoman
+
