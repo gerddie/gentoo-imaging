@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/CastXML/CastXML"
 SRC_URI="https://github.com/gerddie/CastXML/archive/${PV}.tar.gz -> ${P}.tar.gz"
 RESTRICT="primaryuri"
 
-LICENSE="APACHE-2.0"
+LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 DEPENDS="${RDEPENDS}
