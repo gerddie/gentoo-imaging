@@ -1,6 +1,6 @@
-diff -r 5cfd398f7583 amide-current/configure.ac
---- a/amide-current/configure.ac	Tue Nov 03 13:56:59 2015 +0100
-+++ b/amide-current/configure.ac	Thu Nov 05 20:36:19 2015 +0100
+diff -urN amide-1.0.5/configure.ac amide-1.0.5.new/configure.ac
+--- amide-1.0.5/configure.ac	2014-01-27 04:04:07.000000000 +0100
++++ amide-1.0.5.new/configure.ac	2015-11-05 21:28:33.000000000 +0100
 @@ -239,6 +239,25 @@
  	echo "compiling without libecat/CTI file support"
  fi
@@ -27,9 +27,9 @@ diff -r 5cfd398f7583 amide-current/configure.ac
  
  
  dnl Let people compile without having libmdc
-diff -r 5cfd398f7583 amide-current/src/Makefile.am
---- a/amide-current/src/Makefile.am	Tue Nov 03 13:56:59 2015 +0100
-+++ b/amide-current/src/Makefile.am	Thu Nov 05 20:36:19 2015 +0100
+diff -urN amide-1.0.5/src/Makefile.am amide-1.0.5.new/src/Makefile.am
+--- amide-1.0.5/src/Makefile.am	2014-01-25 23:22:33.000000000 +0100
++++ amide-1.0.5.new/src/Makefile.am	2015-11-05 21:29:35.000000000 +0100
 @@ -29,7 +29,8 @@
  	$(AMIDE_LIBDCMDATA_CFLAGS) \
  	-I/usr/local/include \
@@ -40,14 +40,15 @@ diff -r 5cfd398f7583 amide-current/src/Makefile.am
  
  
  
-@@ -49,4 +50,5 @@
+@@ -49,6 +50,7 @@
  	$(XMEDCON_LIBS) \
  	$(FFMPEG_LIBS) \
  	$(AMIDE_LIBDCMDATA_LIBS) \
 +	$(VISTAIO_LIBS) \
  	$(AMIDE_LDADD_WIN32) 
-
-@@ -174,6 +176,8 @@
+ 
+ ## 2007.10.28, gcc 3.4.4 the below may no longer be an issue, as 
+@@ -173,6 +175,8 @@
  	ui_study_cb.h \
  	ui_time_dialog.c \
  	ui_time_dialog.h \
@@ -56,9 +57,9 @@ diff -r 5cfd398f7583 amide-current/src/Makefile.am
  	xml.c \
  	xml.h
  
-diff -r 5cfd398f7583 amide-current/src/amitk_data_set.c
---- a/amide-current/src/amitk_data_set.c	Tue Nov 03 13:56:59 2015 +0100
-+++ b/amide-current/src/amitk_data_set.c	Thu Nov 05 20:36:19 2015 +0100
+diff -urN amide-1.0.5/src/amitk_data_set.c amide-1.0.5.new/src/amitk_data_set.c
+--- amide-1.0.5/src/amitk_data_set.c	2014-01-25 21:23:03.000000000 +0100
++++ amide-1.0.5.new/src/amitk_data_set.c	2015-11-05 21:28:33.000000000 +0100
 @@ -71,7 +71,7 @@
  #include "dcmtk_interface.h"
  #include "libecat_interface.h"
@@ -144,9 +145,9 @@ diff -r 5cfd398f7583 amide-current/src/amitk_data_set.c
  #ifdef AMIDE_LIBECAT_SUPPORT      
    case AMITK_IMPORT_METHOD_LIBECAT:
      import_ds =libecat_import(filename, preferences, update_func, update_data);
-diff -r 5cfd398f7583 amide-current/src/amitk_data_set.h
---- a/amide-current/src/amitk_data_set.h	Tue Nov 03 13:56:59 2015 +0100
-+++ b/amide-current/src/amitk_data_set.h	Thu Nov 05 20:36:19 2015 +0100
+diff -urN amide-1.0.5/src/amitk_data_set.h amide-1.0.5.new/src/amitk_data_set.h
+--- amide-1.0.5/src/amitk_data_set.h	2014-01-23 21:20:09.000000000 +0100
++++ amide-1.0.5.new/src/amitk_data_set.h	2015-11-05 21:28:33.000000000 +0100
 @@ -218,6 +218,9 @@
  #ifdef AMIDE_LIBECAT_SUPPORT
    AMITK_IMPORT_METHOD_LIBECAT,
@@ -157,9 +158,9 @@ diff -r 5cfd398f7583 amide-current/src/amitk_data_set.h
  #ifdef AMIDE_LIBMDC_SUPPORT
    AMITK_IMPORT_METHOD_LIBMDC,
  #endif
-diff -r 5cfd398f7583 amide-current/src/vistaio_interface.c
---- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/amide-current/src/vistaio_interface.c	Thu Nov 05 20:36:19 2015 +0100
+diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interface.c
+--- amide-1.0.5/src/vistaio_interface.c	1970-01-01 01:00:00.000000000 +0100
++++ amide-1.0.5.new/src/vistaio_interface.c	2015-11-05 21:28:33.000000000 +0100
 @@ -0,0 +1,351 @@
 +/* -*- c-basic-offset: 2;  -*-  
 + * vistaio_interface.c
@@ -512,9 +513,9 @@ diff -r 5cfd398f7583 amide-current/src/vistaio_interface.c
 +
 +
 +#endif /* AMIDE_VISTAIO_SUPPORT */
-diff -r 5cfd398f7583 amide-current/src/vistaio_interface.h
---- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/amide-current/src/vistaio_interface.h	Thu Nov 05 20:36:19 2015 +0100
+diff -urN amide-1.0.5/src/vistaio_interface.h amide-1.0.5.new/src/vistaio_interface.h
+--- amide-1.0.5/src/vistaio_interface.h	1970-01-01 01:00:00.000000000 +0100
++++ amide-1.0.5.new/src/vistaio_interface.h	2015-11-05 21:28:33.000000000 +0100
 @@ -0,0 +1,58 @@
 +/* vistaio_interface.h
 + *
