@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-inherit autotools eutils
+inherit eutils
 
 DESCRIPTION="AMIDE's a Medical Imaging Data Examiner"
 HOMEPAGE="http://${PN}.sourceforge.net"
@@ -26,7 +26,6 @@ DEPEND="${RDEPEND}"
 
 src_compile () {
 
-
 	econf \
 		$(use_enable gsl gsltest) \
 		$(use_enable gsl libgsl) \
@@ -40,13 +39,9 @@ src_compile () {
 		$(use_enable doc) \
 		$(use_enable doc gtk-doc) \
 		|| die "configure failed"
-	emake -j1 || die "compile problem"
-
+	emake || die "compile problem"
 }
-
-
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-
 }

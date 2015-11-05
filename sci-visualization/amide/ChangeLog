@@ -1,5 +1,7 @@
+  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5.ebuild:
+  sci-visualization/amide: clean additional repoman complaints
+
 *amide-1.0.5 (4 Nov 2015)
 
   04 Nov2015;  <gw.fossdev@gmail.com> amide-1.0.5.ebuild:
   correct ebuild to satisfy repoman
-
