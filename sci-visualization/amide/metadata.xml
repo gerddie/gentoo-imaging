@@ -15,5 +15,6 @@
     <flag name="fame">Enable mpeg1 and mpeg4 output</flag>
     <flag name="volpack">Enable volume rendering through volpack</flag>
     <flag name="dicom">Enable native DICOM support</flag>
+    <flag name="vistaio">Enable experimental vista file import</flag>
   </use>
 </pkgmetadata>
