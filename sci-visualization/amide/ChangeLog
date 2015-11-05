@@ -1,3 +1,6 @@
+  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild:
+  sci-visualization/amide: Set -j1 because parallel builds don't work
+
   05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild, metadata.xml:
   sci-visualization/amide: Add vistaio use flag
 
