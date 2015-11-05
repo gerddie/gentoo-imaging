@@ -1,4 +1,7 @@
   05 Nov 2015;  <gerddie@gentoo.org> files/amide-1.0.5-vistaio.patch:
+  sci-visualization/amide: yet another test to correct the patch
+
+  05 Nov 2015;  <gerddie@gentoo.org> files/amide-1.0.5-vistaio.patch:
   sci-visualization/amide: Another correction of the patch
 
   05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild,
