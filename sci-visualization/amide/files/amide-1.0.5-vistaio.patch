@@ -40,14 +40,14 @@ diff -r 5cfd398f7583 amide-current/src/Makefile.am
  
  
  
-@@ -49,6 +50,7 @@
+@@ -49,4 +50,5 @@
  	$(XMEDCON_LIBS) \
  	$(FFMPEG_LIBS) \
  	$(AMIDE_LIBDCMDATA_LIBS) \
 +	$(VISTAIO_LIBS) \
- 	$(AMIDE_LIBOPENJP2_LIBS) \
  	$(AMIDE_LDADD_WIN32) 
- 
+
+## 2007.10.28, gcc 3.4.4 the below may no longer be an issue, as 
 @@ -174,6 +176,8 @@
  	ui_study_cb.h \
  	ui_time_dialog.c \
