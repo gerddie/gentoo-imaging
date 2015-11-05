@@ -32,7 +32,7 @@ PATCHES=(
 
 src_configure () {
 
-	autoreconf
+	eautoreconf
 
 	econf \
 		$(use_enable gsl gsltest) \
