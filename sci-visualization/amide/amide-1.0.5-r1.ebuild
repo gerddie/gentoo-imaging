@@ -27,13 +27,11 @@ vistaio? ( sci-libs/vistaio )
 
 DEPEND="${RDEPEND}"
 
-PATCHES=(
-		"${FILESDIR}"/${PN}-1.0.5-vistaio.patch
-)
+src_prepare () {
+	use vistaio && epatch "${FILESDIR}/${PN}-1.0.5-vistaio.patch" &&  eautoreconf
+}
 
 src_configure () {
-
-	eautoreconf
 
 	econf \
 		$(use_enable gsl gsltest) \
