@@ -1,0 +1,5 @@
+*amide-1.0.5 (4 Nov 2015)
+
+  04 Nov2015;  <gw.fossdev@gmail.com> amide-1.0.5.ebuild:
+  correct ebuild to satisfy repoman
+
