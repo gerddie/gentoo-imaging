@@ -1,38 +1,23 @@
-  05 Nov 2015;  <gerddie@gentoo.org> files/amide-1.0.5-vistaio.patch:
-  sci-visualization/amide: Correct patch to latest version
-
-  05 Nov 2015;  <gerddie@gentoo.org> files/amide-1.0.5-vistaio.patch:
-  sci-visualization/amide: Redo the vistaio patch from scratch
-
-  05 Nov 2015;  <gerddie@gentoo.org> files/amide-1.0.5-vistaio.patch:
-  sci-visualization/amide: yet another test to correct the patch
-
-  05 Nov 2015;  <gerddie@gentoo.org> files/amide-1.0.5-vistaio.patch:
-  sci-visualization/amide: Another correction of the patch
-
-  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild,
+  05 Nov 2015;  <gw.fossdev@gmail.com> amide-1.0.5-r1.ebuild,
   files/amide-1.0.5-vistaio.patch:
   sci-visualization/amide: Adapt patch to missing jp2
 
-  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild:
+  05 Nov 2015;  <gw.fossdev@gmail.com> amide-1.0.5-r1.ebuild:
   sci-visualization/amide: Apply vistaio patch only if vistaio requested
 
-  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild:
+  05 Nov 2015;  <gw.fossdev@gmail.com> amide-1.0.5-r1.ebuild:
   sci-visualization/amide: Set -j1 because parallel builds don't work
 
-  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild, metadata.xml:
-  sci-visualization/amide: Add vistaio use flag
-
-  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild:
+  05 Nov 2015;  <gw.fossdev@gmail.com> amide-1.0.5-r1.ebuild:
   sci-visualization/amide: Add vistaio support patch
 
 *amide-1.0.5-r1 (05 Nov 2015)
 
-  05 Nov 2015;  <gerddie@gentoo.org> +amide-1.0.5-r1.ebuild,
+  05 Nov 2015;  <gw.fossdev@gmail.com> +amide-1.0.5-r1.ebuild,
   +files/amide-1.0.5-vistaio.patch:
   sci-visualization/amide:
 
-  05 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5.ebuild:
+  05 Nov 2015;  <gw.fossdev@gmail.com> amide-1.0.5.ebuild:
   sci-visualization/amide: clean additional repoman complaints
 
 *amide-1.0.5 (4 Nov 2015)
