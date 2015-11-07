@@ -27,8 +27,8 @@ RDEPEND=">=sci-libs/itk-4.5.2
 		 >=dev-qt/qtconcurrent-5.4
 		 >=dev-qt/qtnetwork-5.4
 		 >=dev-qt/qtdeclarative-5.4
-		 media-libs/libpng
-		 virtual/jpeg
+		 media-libs/libpng:0
+		 virtual/jpeg:62
 		"
 DEPEND="${RDEPEND}
 		  >=dev-util/cmake-2.8

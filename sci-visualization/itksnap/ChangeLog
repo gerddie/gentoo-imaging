@@ -1,3 +1,6 @@
+  07 Nov 2015;  <gerddie@gentoo.org> itksnap-3.2.0.ebuild:
+  sci-visualization/itksnap: Set proper dependency slots
+
   07 Nov 2015;  <gerddie@gentoo.org> +Changelog, +metadata.xml,
   itksnap-3.2.0.ebuild:
   sci-visualization/itksnap: correct repoman
