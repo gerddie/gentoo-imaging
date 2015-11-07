@@ -1,8 +1,8 @@
-# Copyright 2010 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI="3"
+EAPI="5"
 
 inherit eutils toolchain-funcs cmake-utils flag-o-matic
 
@@ -11,15 +11,14 @@ HOMEPAGE="http://www.itksnap.org"
 SRC_URI="mirror://sourceforge/itk-snap/itksnap-source-3.2.0.tar.gz"
 RESTRICT="primaryuri"
 
-LICENSE="GPL"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 append-cxxflags -fPIC -funroll-loops
 
-
-RDEPEND="sci-libs/itk[itkv3compat]
+RDEPEND=">=sci-libs/itk-4.5.2
 		 >=sci-libs/vtk-6.2
 		 >=dev-qt/qtgui-5.4
 		 >=dev-qt/qtwidgets-5.4
@@ -41,7 +40,3 @@ src_unpack() {
 	cd "${P}"
 	unpack ${A}
 }
-
-#src_prepare() {
-#	epatch "${FILESDIR}/itksnap-2.4.0-find-vtk-and-ftlk.patch"
-#}
