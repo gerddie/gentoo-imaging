@@ -1,3 +1,8 @@
+*CastXML-0.0.0_pre1-r1 (11 Nov 2015)
+
+  11 Nov 2015;  <gerddie@gentoo.org> +CastXML-0.0.0_pre1-r1.ebuild:
+  dev-cpp/CastXML: Correct doc install path
+
   02 Nov 2015;  <gerddie@gentoo.org> CastXML-0.0.0_pre1.ebuild:
   dev-cpp/CastXML: correct license
 
