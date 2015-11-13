@@ -13,11 +13,12 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="gsl xmedcon fame volpack vistaio dicom debug doc"
+IUSE="gsl xmedcon fame volpack vistaio dicom debug doc jpeg2k"
 
 RDEPEND="
 >=x11-libs/gtk+-2.10:2
 xmedcon? ( >=sci-libs/xmedcon-0.10 )
+jpeg2k? ( media-libs/openjpeg )
 volpack? ( media-libs/volpack )
 fame? ( media-libs/libfame )
 gsl? ( sci-libs/gsl )
@@ -40,6 +41,7 @@ src_configure () {
 		$(use_enable xmedcon libmdc) \
 		$(use_enable fame libfametest) \
 		$(use_enable fame libfame) \
+		$(use_enable jpeg2k libopenjp2) \
 		$(use_enable dicom libdcmdata) \
 		$(use_enable volpack libvolpack) \
 		$(use_enable vistaio vistaio) \
