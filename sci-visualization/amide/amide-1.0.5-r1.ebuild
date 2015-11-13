@@ -18,7 +18,7 @@ IUSE="gsl xmedcon fame volpack vistaio dicom debug doc jpeg2k"
 RDEPEND="
 >=x11-libs/gtk+-2.10:2
 xmedcon? ( >=sci-libs/xmedcon-0.10 )
-jpeg2k? ( media-libs/openjpeg )
+jpeg2k? ( media-libs/openjpeg:2 )
 volpack? ( media-libs/volpack )
 fame? ( media-libs/libfame )
 gsl? ( sci-libs/gsl )

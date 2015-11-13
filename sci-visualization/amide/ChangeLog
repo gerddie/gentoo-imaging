@@ -1,4 +1,7 @@
   13 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild:
+  sci-visualization/amide: Set correct slot for openjpeg
+
+  13 Nov 2015;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild:
   sci-visualization/amide: Add support for jpeg2k
 
   05 Nov 2015;  <gw.fossdev@gmail.com> amide-1.0.5-r1.ebuild,
