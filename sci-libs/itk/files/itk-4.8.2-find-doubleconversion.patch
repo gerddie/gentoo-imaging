@@ -1,6 +1,6 @@
 diff -ru InsightToolkit-4.8.2.old/Modules/Core/Common/include/itkNumberToString.h InsightToolkit-4.8.2/Modules/Core/Common/include/itkNumberToString.h
 --- InsightToolkit-4.8.2.old/Modules/Core/Common/include/itkNumberToString.h	2015-12-03 23:30:51.699038707 +0100
-+++ InsightToolkit-4.8.2/Modules/Core/Common/include/itkNumberToString.h	2015-12-03 23:46:41.383105791 +0100
++++ InsightToolkit-4.8.2/Modules/Core/Common/include/itkNumberToString.h	2015-12-03 23:58:47.699157097 +0100
 @@ -18,7 +18,6 @@
  #ifndef itkNumberToString_h
  #define itkNumberToString_h
@@ -9,13 +9,14 @@ diff -ru InsightToolkit-4.8.2.old/Modules/Core/Common/include/itkNumberToString.
  #include "itkMacro.h"
  #include <string>
  
-@@ -44,14 +43,12 @@
+@@ -43,15 +42,10 @@
+ class NumberToString
  {
  public:
-   NumberToString() :
+-  NumberToString() :
 -    m_DoubleToStringConverter(double_conversion::DoubleToStringConverter::EcmaScriptConverter())
-     {
-     }
+-    {
+-    }
    std::string operator() (TValue val);
  
  private:

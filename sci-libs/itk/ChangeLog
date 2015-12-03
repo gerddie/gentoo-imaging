@@ -4,6 +4,10 @@
 
   03 Dec 2015;  <gerddie@gentoo.org>
   files/itk-4.8.2-find-doubleconversion.patch:
+  sci-libs/itk:          more patch clean up
+
+  03 Dec 2015;  <gerddie@gentoo.org>
+  files/itk-4.8.2-find-doubleconversion.patch:
   sci-libs/itk:          clean out patch a second time
 
   03 Dec 2015;  <gerddie@gentoo.org>
