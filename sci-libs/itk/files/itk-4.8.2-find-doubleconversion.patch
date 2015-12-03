@@ -92,3 +92,12 @@ diff -ru InsightToolkit-4.8.2.old/Modules/ThirdParty/DoubleConversion/CMakeLists
  else()
    set(ITKDoubleConversion_INCLUDE_DIRS
      ${ITKDoubleConversion_SOURCE_DIR}/src/double-conversion
+diff -ru InsightToolkit-4.8.2.old/Modules/ThirdParty/DoubleConversion/src/CMakeLists.txt InsightToolkit-4.8.2/Modules/ThirdParty/DoubleConversion/src/CMakeLists.txt
+--- InsightToolkit-4.8.2.old/Modules/ThirdParty/DoubleConversion/src/CMakeLists.txt	2015-12-03 23:30:51.870038719 +0100
++++ InsightToolkit-4.8.2/Modules/ThirdParty/DoubleConversion/src/CMakeLists.txt	2015-12-04 00:11:24.311210542 +0100
+@@ -1 +1,4 @@
+-add_subdirectory(double-conversion)
++if(NOT ITK_USE_SYSTEM_DOUBLECONVERSION)
++  add_subdirectory(double-conversion)
++endif()
++
