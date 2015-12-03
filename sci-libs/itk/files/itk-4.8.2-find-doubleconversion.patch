@@ -1,6 +1,65 @@
-diff -ru InsightToolkit-4.8.2.orig/Modules/ThirdParty/DoubleConversion/CMakeLists.txt InsightToolkit-4.8.2/Modules/ThirdParty/DoubleConversion/CMakeLists.txt
---- InsightToolkit-4.8.2.orig/Modules/ThirdParty/DoubleConversion/CMakeLists.txt	2015-11-12 17:21:07.000000000 +0100
-+++ InsightToolkit-4.8.2/Modules/ThirdParty/DoubleConversion/CMakeLists.txt	2015-12-03 22:00:01.771653734 +0100
+diff -ru InsightToolkit-4.8.2.old/Modules/Core/Common/include/itkNumberToString.h InsightToolkit-4.8.2/Modules/Core/Common/include/itkNumberToString.h
+--- InsightToolkit-4.8.2.old/Modules/Core/Common/include/itkNumberToString.h	2015-12-03 23:30:51.699038707 +0100
++++ InsightToolkit-4.8.2/Modules/Core/Common/include/itkNumberToString.h	2015-12-03 23:36:48.306063897 +0100
+@@ -18,7 +18,6 @@
+ #ifndef itkNumberToString_h
+ #define itkNumberToString_h
+ 
+-#include "double-conversion.h"
+ #include "itkMacro.h"
+ #include <string>
+ 
+@@ -44,7 +43,6 @@
+ {
+ public:
+   NumberToString() :
+-    m_DoubleToStringConverter(double_conversion::DoubleToStringConverter::EcmaScriptConverter())
+     {
+     }
+   std::string operator() (TValue val);
+Only in InsightToolkit-4.8.2/Modules/Core/Common/include: itkNumberToString.h~
+diff -ru InsightToolkit-4.8.2.old/Modules/Core/Common/src/itkNumberToString.cxx InsightToolkit-4.8.2/Modules/Core/Common/src/itkNumberToString.cxx
+--- InsightToolkit-4.8.2.old/Modules/Core/Common/src/itkNumberToString.cxx	2015-12-03 23:30:51.705038707 +0100
++++ InsightToolkit-4.8.2/Modules/Core/Common/src/itkNumberToString.cxx	2015-12-03 23:36:52.962064226 +0100
+@@ -17,6 +17,7 @@
+  *=========================================================================*/
+ #include "itkNumberToString.h"
+ #include "itkNumericTraits.h"
++#include "double-conversion.h"
+ 
+ #include <sstream>
+ 
+@@ -27,9 +28,11 @@
+ std::string NumberToString<double>::operator() (double val)
+ {
+   char buf[256];
++  const double_conversion::DoubleToStringConverter& converter = 
++          double_conversion::DoubleToStringConverter::EcmaScriptConverter(); 
+   double_conversion::StringBuilder builder(buf,sizeof(buf));
+   builder.Reset();
+-  if(!m_DoubleToStringConverter.ToShortest(val,&builder))
++  if(!converter.ToShortest(val,&builder))
+     {
+     itkGenericExceptionMacro(<< "Conversion failed for " << val);
+     }
+@@ -40,9 +43,12 @@
+ std::string NumberToString<float>::operator() (float val)
+ {
+   char buf[256];
++  const double_conversion::DoubleToStringConverter& converter = 
++          double_conversion::DoubleToStringConverter::EcmaScriptConverter(); 
++  
+   double_conversion::StringBuilder builder(buf,sizeof(buf));
+   builder.Reset();
+-  if(!m_DoubleToStringConverter.ToShortestSingle(val,&builder))
++  if(!converter.ToShortestSingle(val,&builder))
+     {
+     itkGenericExceptionMacro(<< "Conversion failed for " << val);
+     }
+Only in InsightToolkit-4.8.2/Modules/Core/Common/src: itkNumberToString.cxx~
+diff -ru InsightToolkit-4.8.2.old/Modules/ThirdParty/DoubleConversion/CMakeLists.txt InsightToolkit-4.8.2/Modules/ThirdParty/DoubleConversion/CMakeLists.txt
+--- InsightToolkit-4.8.2.old/Modules/ThirdParty/DoubleConversion/CMakeLists.txt	2015-12-03 23:30:51.870038719 +0100
++++ InsightToolkit-4.8.2/Modules/ThirdParty/DoubleConversion/CMakeLists.txt	2015-12-03 23:37:22.369066303 +0100
 @@ -7,11 +7,19 @@
  mark_as_advanced(ITK_USE_SYSTEM_DOUBLECONVERSION)
  
