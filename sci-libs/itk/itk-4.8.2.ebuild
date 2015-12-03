@@ -28,6 +28,7 @@ RDEPEND="
 	media-libs/libpng:0=
 	media-libs/tiff:0=
 	sci-libs/dcmtk:0=
+	sci-libs/gdcm
 	sci-libs/hdf5:0=[cxx]
 	sys-libs/zlib:0=
 	virtual/jpeg
@@ -82,6 +83,7 @@ src_configure() {
 		-DITK_USE_SYSTEM_JPEG=ON
 		-DITK_USE_SYSTEM_PNG=ON
 		-DITK_USE_SYSTEM_SWIG=ON
+		-DITK_USE-SYSTEM_GDCO=ON
 		-DITK_USE_SYSTEM_TIFF=ON
 		-DITK_USE_SYSTEM_ZLIB=ON
 		-DITK_BUILD_DEFAULT_MODULES=ON
