@@ -46,14 +46,9 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 S="${WORKDIR}/${MYP}"
 
-#PATCHES=(
-#	"${FILESDIR}"/0001-BUG-Wrap-TransformFileReader-TransformFileWriter.patch
-#	"${FILESDIR}"/0002-COMP-Fixed-itkQuasiNewtonOptimizerv4-wrapping-warnin.patch
-#	"${FILESDIR}"/0003-COMP-Fixed-itkGradientDescentOptimizerv4-wrapping-wa.patch
-#	"${FILESDIR}"/0004-COMP-Warp-OptimizerParameterScalesEstimatorTemplate.patch
-#	"${FILESDIR}"/0005-make-gdcm-helper-library-static.patch
-#	"${FILESDIR}"/nrrdio-linking.patch
-#)
+PATCHES=(
+	"${FILESDIR}"/itk-4.8.2-find-doubleconversion.patch
+)
 
 pkg_pretend() {
 	if [[ -z ${ITK_COMPUTER_MEMORY_SIZE} ]]; then
@@ -70,9 +65,6 @@ pkg_pretend() {
 }
 
 src_configure() {
-	sed -i \
-		-e '/find_package/d' \
-		Modules/ThirdParty/DoubleConversion/CMakeLists.txt || die
 
 	local mycmakeargs=(
 		-DBUILD_SHARED_LIBS=ON
