@@ -30,7 +30,7 @@ RDEPEND="
 	sci-libs/dcmtk:0=
 	sci-libs/hdf5:0=[cxx]
 	sys-libs/zlib:0=
-	virtual/jpeg
+	virtual/jpeg:0=
 	fftw? ( sci-libs/fftw:3.0= )
 	vtkglue? ( sci-libs/vtk:0=[python?] )
 "
