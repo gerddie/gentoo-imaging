@@ -2,6 +2,9 @@
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.1.ebuild, itk-4.8.2-r1.ebuild:
+  sci-libs/itk:          Final cleanup of the double-conversion patch
+
   03 Dec 2015;  <gerddie@gentoo.org>
   files/itk-4.8.2-find-doubleconversion.patch:
   sci-libs/itk:          more patch clean up

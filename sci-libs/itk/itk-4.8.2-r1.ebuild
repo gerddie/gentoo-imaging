@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id:$
 
 EAPI=5
 
@@ -75,6 +75,7 @@ src_configure() {
 		-DITK_USE_SYSTEM_JPEG=ON
 		-DITK_USE_SYSTEM_PNG=ON
 		-DITK_USE_SYSTEM_SWIG=ON
+		-DITK_USE-SYSTEM_GDCM=ON
 		-DITK_USE-SYSTEM_GDCO=ON
 		-DITK_USE_SYSTEM_TIFF=ON
 		-DITK_USE_SYSTEM_ZLIB=ON
