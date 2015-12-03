@@ -4,6 +4,10 @@
 
   03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.1.ebuild, itk-4.8.2.ebuild,
   metadata.xml:
+  sci-libs/itk:          readd and document the sse2 use flag
+
+  03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.1.ebuild, itk-4.8.2.ebuild,
+  metadata.xml:
   sci-libs/itk:          revert the review flag
 
 *itk-4.8.2 (03 Dec 2015)
