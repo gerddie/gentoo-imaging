@@ -12,6 +12,7 @@
 </longdescription>
   <use>
     <flag name="itkv3compat">Enable compatibility with ITK version 3</flag>
+    <flag name="review">Enable support for modules under review</flag>
     <flag name="vtkglue">PLEASE FIX MY DESCRIPTION</flag>
   </use>
 </pkgmetadata>
