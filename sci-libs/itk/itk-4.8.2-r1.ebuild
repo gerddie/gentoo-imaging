@@ -82,8 +82,6 @@ src_configure() {
 		-DITK_COMPUTER_MEMORY_SIZE="${ITK_COMPUTER_MEMORY_SIZE:-1}"
 		-DWRAP_ITK_JAVA=OFF
 		-DWRAP_ITK_TCL=OFF
-		-Ddouble-conversion_INCLUDE_DIRS="${EPREFIX}/usr/include/double-conversion"
-		-Ddouble-conversion_LIBRARIES="-ldouble-conversion"
 		$(cmake-utils_use_build test TESTING)
 		$(cmake-utils_use_build examples EXAMPLES)
 		$(cmake-utils_use review ITK_USE_REVIEW)
