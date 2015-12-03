@@ -1,0 +1,4 @@
+*gdcm-2.6.1 (03 Dec 2015)
+
+  03 Dec 2015;  <gerddie@gentoo.org> +gdcm-2.6.1.ebuild, +metadata.xml:
+  sci-libs/gdcm:    Initial upload
