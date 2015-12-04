@@ -1,0 +1,4 @@
+*vtk-dicom-0.7.1 (04 Dec 2015)
+
+  04 Dec 2015;  <gerddie@gentoo.org> +metadata.xml, +vtk-dicom-0.7.1.ebuild:
+  sci-libs/vtk-dicom:          Initial upload
