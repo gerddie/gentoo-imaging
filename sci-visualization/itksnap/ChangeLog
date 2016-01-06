@@ -1,9 +1,9 @@
-  04 Dec 2015;  <gerddie@gentoo.org> -Changelog:
+  04 Dec 2015;  <gw.fossdev@gmail.com> -Changelog:
   sci-visualization/itksnap:          remove old Changelog file
 
-  07 Nov 2015;  <gerddie@gentoo.org> itksnap-3.2.0.ebuild:
+  07 Nov 2015;  <gw.fossdev@gmail.com> itksnap-3.2.0.ebuild:
   sci-visualization/itksnap: Set proper dependency slots
 
-  07 Nov 2015;  <gerddie@gentoo.org> +Changelog, +metadata.xml,
+  07 Nov 2015;  <gw.fossdev@gmail.com> +Changelog, +metadata.xml,
   itksnap-3.2.0.ebuild:
   sci-visualization/itksnap: correct repoman

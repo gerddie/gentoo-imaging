@@ -2,47 +2,47 @@
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.1.ebuild, itk-4.8.2-r1.ebuild:
+  03 Dec 2015;  <gw.fossdev@gmail.com> itk-4.8.1.ebuild, itk-4.8.2-r1.ebuild:
   sci-libs/itk:          Final cleanup of the double-conversion patch
 
-  03 Dec 2015;  <gerddie@gentoo.org>
+  03 Dec 2015;  <gw.fossdev@gmail.com>
   files/itk-4.8.2-find-doubleconversion.patch:
   sci-libs/itk:          more patch clean up
 
-  03 Dec 2015;  <gerddie@gentoo.org>
+  03 Dec 2015;  <gw.fossdev@gmail.com>
   files/itk-4.8.2-find-doubleconversion.patch:
   sci-libs/itk:          clean out patch a second time
 
-  03 Dec 2015;  <gerddie@gentoo.org>
+  03 Dec 2015;  <gw.fossdev@gmail.com>
   files/itk-4.8.2-find-doubleconversion.patch:
   sci-libs/itk:          update patch to remove double-conversion from public
   interface
 
-  03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.1.ebuild, itk-4.8.2-r1.ebuild:
+  03 Dec 2015;  <gw.fossdev@gmail.com> itk-4.8.1.ebuild, itk-4.8.2-r1.ebuild:
   sci-libs/itk:          Add to slot virtual/jpeg
 
-  03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.2-r1.ebuild:
+  03 Dec 2015;  <gw.fossdev@gmail.com> itk-4.8.2-r1.ebuild:
   sci-libs/itk:
 
 *itk-4.8.2-r1 (03 Dec 2015)
 
-  03 Dec 2015;  <gerddie@gentoo.org>
+  03 Dec 2015;  <gw.fossdev@gmail.com>
   +files/itk-4.8.2-find-doubleconversion.patch, +itk-4.8.2-r1.ebuild,
   -itk-4.8.2.ebuild:
   sci-libs/itk:          Add patch to really use system provided double-
   conversion
 
-  03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.1.ebuild, itk-4.8.2.ebuild,
+  03 Dec 2015;  <gw.fossdev@gmail.com> itk-4.8.1.ebuild, itk-4.8.2.ebuild,
   metadata.xml:
   sci-libs/itk:          readd and document the sse2 use flag
 
-  03 Dec 2015;  <gerddie@gentoo.org> itk-4.8.1.ebuild, itk-4.8.2.ebuild,
+  03 Dec 2015;  <gw.fossdev@gmail.com> itk-4.8.1.ebuild, itk-4.8.2.ebuild,
   metadata.xml:
   sci-libs/itk:          revert the review flag
 
 *itk-4.8.2 (03 Dec 2015)
 
-  03 Dec 2015;  <gerddie@gentoo.org> +itk-4.8.2.ebuild, itk-4.8.1.ebuild,
+  03 Dec 2015;  <gw.fossdev@gmail.com> +itk-4.8.2.ebuild, itk-4.8.1.ebuild,
   metadata.xml:
   sci-libs/itk:          Add version 4.8.2         Enable support for system-
   gdcm
