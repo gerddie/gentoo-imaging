@@ -75,17 +75,18 @@ src_configure() {
 		-DITK_USE_SYSTEM_JPEG=ON
 		-DITK_USE_SYSTEM_PNG=ON
 		-DITK_USE_SYSTEM_SWIG=ON
-		-DITK_USE-SYSTEM_GDCM=ON
-		-DITK_USE-SYSTEM_GDCO=ON
+		-DITK_USE_SYSTEM_GDCM=ON
 		-DITK_USE_SYSTEM_TIFF=ON
 		-DITK_USE_SYSTEM_ZLIB=ON
 		-DITK_BUILD_DEFAULT_MODULES=ON
 		-DITK_COMPUTER_MEMORY_SIZE="${ITK_COMPUTER_MEMORY_SIZE:-1}"
+                -DModule_ITKDCMTK:BOOL=ON 
+                -DITK_FORBID_DOWNLOADS:BOOL=ON
 		-DWRAP_ITK_JAVA=OFF
 		-DWRAP_ITK_TCL=OFF
 		$(cmake-utils_use_build test TESTING)
 		$(cmake-utils_use_build examples EXAMPLES)
-		$(cmake-utils_use review ITK_USE_REVIEW)
+		$(cmake-utils_use review Module_ITKReview)
 		$(cmake-utils_use itkv3compat ITKV3_COMPATIBILITY)
 		$(cmake-utils_use sse2 VNL_CONFIG_ENABLE_SSE2)
 	)
