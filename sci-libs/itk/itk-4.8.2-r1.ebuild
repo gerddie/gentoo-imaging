@@ -27,7 +27,7 @@ RDEPEND="
 	dev-libs/double-conversion:0=
 	media-libs/libpng:0=
 	media-libs/tiff:0=
-	sci-libs/dcmtk:0=
+	sci-libs/dcmtk
 	sci-libs/gdcm
 	sci-libs/hdf5:0=[cxx]
 	sys-libs/zlib:0=
@@ -80,8 +80,9 @@ src_configure() {
 		-DITK_USE_SYSTEM_ZLIB=ON
 		-DITK_BUILD_DEFAULT_MODULES=ON
 		-DITK_COMPUTER_MEMORY_SIZE="${ITK_COMPUTER_MEMORY_SIZE:-1}"
-                -DModule_ITKDCMTK:BOOL=ON 
-                -DITK_FORBID_DOWNLOADS:BOOL=ON
+                -DModule_ITKDCMTK=ON
+                -DModule_ITKIODCMTK=ON
+                -DITK_FORBID_DOWNLOADS=ON
 		-DWRAP_ITK_JAVA=OFF
 		-DWRAP_ITK_TCL=OFF
 		$(cmake-utils_use_build test TESTING)
