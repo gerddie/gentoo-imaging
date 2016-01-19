@@ -1,3 +1,6 @@
+  19 Jan 2016;  <gerddie@gentoo.org> itksnap-3.4.0.ebuild:
+  remove unpack because the tarball is now well formed
+
 *itksnap-3.4.0 (19 Jan 2016)
 
   19 Jan 2016;  <gerddie@gentoo.org> +itksnap-3.4.0.ebuild:

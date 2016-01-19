@@ -33,10 +33,3 @@ RDEPEND=">=sci-libs/itk-4.8.0
 DEPEND="${RDEPEND}
 		  >=dev-util/cmake-2.8
 	"
-
-# unpack into versioned subdir because the tarball doesn't contain it
-src_unpack() {
-	mkdir "${P}"
-	cd "${P}"
-	unpack ${A}
-}
