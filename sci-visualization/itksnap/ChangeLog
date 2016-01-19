@@ -1,3 +1,8 @@
+*itksnap-3.4.0 (19 Jan 2016)
+
+  19 Jan 2016;  <gerddie@gentoo.org> +itksnap-3.4.0.ebuild:
+  sci-visualization/itksnap:          Add initial ebuild for version 3.4.0
+
   04 Dec 2015;  <gw.fossdev@gmail.com> -Changelog:
   sci-visualization/itksnap:          remove old Changelog file
 
