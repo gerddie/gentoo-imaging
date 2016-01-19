@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-append-cxxflags -fPIC -funroll-loops
+append-cxxflags -fPIC -funroll-loops -ftree-vectorize
 
 RDEPEND=">=sci-libs/itk-4.8.0
 		 >=sci-libs/vtk-6.2
