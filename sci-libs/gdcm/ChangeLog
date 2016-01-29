@@ -1,3 +1,8 @@
+*gdcm-2.6.2 (29 Jan 2016)
+
+  29 Jan 2016;  <gerddie@gentoo.org> +gdcm-2.6.2.ebuild:
+  sci-libs/gdcm: New upstream 2.6.2
+
 *gdcm-2.6.1 (03 Dec 2015)
 
   03 Dec 2015;  <gw.fossdev@gmail.com> +gdcm-2.6.1.ebuild, +metadata.xml:
