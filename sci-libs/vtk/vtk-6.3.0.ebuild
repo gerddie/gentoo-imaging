@@ -1,6 +1,6 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/vtk/vtk-6.1.0-r1.ebuild,v 1.2 2015/01/06 09:45:16 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/vtk/vtk-6.3.0.ebuild,v 1.2 2015/01/06 09:45:16 aballier Exp $
 
 EAPI=5
 
@@ -331,7 +331,7 @@ src_test() {
 src_install() {
 	use web && webapp_src_preinst
 	# install docs
-	HTML_DOCS=( "${S}"/README.html )
+	HTML_DOCS=( "${S}"/README.md )
 
 	cmake-utils_src_install
 
