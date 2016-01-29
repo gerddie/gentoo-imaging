@@ -1,0 +1,4 @@
+*vtk-6.3.0 (29 Jan 2016)
+
+  29 Jan 2016;  <gerddie@gentoo.org> +vtk-6.3.0.ebuild:
+  sci-libs/vtk:   Add new upstream version 6.3.0
