@@ -30,6 +30,8 @@ RDEPENDS="sci-libs/vtk
 		media-libs/openjpeg:2
 		media-libs/charls
 	sys-libs/zlib
+        app-text/docbook-xsl-ns-stylesheets
+        dev-libs/libxslt
 	"
 
 PATCHES=(
