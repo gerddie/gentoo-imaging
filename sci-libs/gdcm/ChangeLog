@@ -1,3 +1,9 @@
+*gdcm-2.6.3 (30 Jan 2016)
+
+  30 Jan 2016;  <gerddie@gentoo.org>
+  +files/dcm_group2_buggyfiles_fallback.patch, +gdcm-2.6.3.ebuild:
+  Add new upstream with buggy dcm workaround
+
 *gdcm-2.6.2 (29 Jan 2016)
 
   29 Jan 2016;  <gerddie@gentoo.org> +gdcm-2.6.2.ebuild:
