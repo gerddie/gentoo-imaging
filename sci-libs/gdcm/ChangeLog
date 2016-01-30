@@ -1,4 +1,7 @@
   30 Jan 2016;  <gerddie@gentoo.org> gdcm-2.6.3.ebuild:
+  Put stylesheets to build dependencies
+
+  30 Jan 2016;  <gerddie@gentoo.org> gdcm-2.6.3.ebuild:
   Add stylesheets to dependencies
 
 *gdcm-2.6.3 (30 Jan 2016)

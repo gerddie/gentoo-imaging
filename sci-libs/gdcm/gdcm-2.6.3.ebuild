@@ -17,21 +17,21 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 DEPENDS="app-arch/xz-utils
 	doc? doxygen
-	 ${RDEPENDS}
-		"
+	app-text/docbook-xsl-ns-stylesheets
+	dev-libs/libxslt
+	${RDEPENDS}
+"
 
 RDEPENDS="sci-libs/vtk
 	app-text/poppler
 	dev-cpp/libxml2
 	dev-libs/expat
 	dev-libs/json-c
-		dev-libs/openssl:0
-		net-libs/socket++
-		media-libs/openjpeg:2
-		media-libs/charls
+	dev-libs/openssl:0
+	net-libs/socket++
+	media-libs/openjpeg:2
+	media-libs/charls
 	sys-libs/zlib
-        app-text/docbook-xsl-ns-stylesheets
-        dev-libs/libxslt
 	"
 
 PATCHES=(
