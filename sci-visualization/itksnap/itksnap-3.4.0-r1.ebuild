@@ -19,7 +19,7 @@ IUSE=""
 append-cxxflags -fPIC -funroll-loops -ftree-vectorize
 
 RDEPEND=">=sci-libs/itk-4.8.0
-		 >=sci-libs/vtk-6.2
+		 >=sci-libs/vtk-6.3
 		 >=dev-qt/qtgui-5.4
 		 >=dev-qt/qtwidgets-5.4
 		 >=dev-qt/qtopengl-5.4
@@ -33,3 +33,7 @@ RDEPEND=">=sci-libs/itk-4.8.0
 DEPEND="${RDEPEND}
 		  >=dev-util/cmake-2.8
 	"
+
+PATCHES=(
+	"${FILESDIR}"/vtk_6_3.patch
+)
