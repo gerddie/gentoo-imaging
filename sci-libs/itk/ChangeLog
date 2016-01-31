@@ -3,6 +3,9 @@
 # $Header: $
 
   31 Jan 2016;  <gerddie@gentoo.org> itk-4.9.0.ebuild:
+  Correct use of castxml
+
+  31 Jan 2016;  <gerddie@gentoo.org> itk-4.9.0.ebuild:
   explicitly forbid downloads while building
 
 *itk-4.9.0 (30 Jan 2016)
