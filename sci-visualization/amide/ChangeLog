@@ -1,3 +1,6 @@
+  01 Mar 2016;  <gerddie@gentoo.org> metadata.xml:
+  sci-visualization/amide:          Remove herde from metadata.xml
+
   13 Nov 2015;  <gw.fossdev@gmail.com> amide-1.0.5-r1.ebuild:
   sci-visualization/amide: Set correct slot for openjpeg
 
