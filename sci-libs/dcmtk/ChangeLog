@@ -1,3 +1,8 @@
+*dcmtk-3.6.1_pre20160216 (01 Mar 2016)
+
+  01 Mar 2016;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20160216.ebuild:
+  sci-libs/dcmtk:          Add emuild for new upstream shapshot
+
   01 Mar 2016;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20150924.ebuild,
   metadata.xml:
   sci-libs/dcmtk:    point the sur-uri to Debian, because upstream pulled the
