@@ -1,6 +1,9 @@
+  01 Mar 2016;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20150924.ebuild,
+  metadata.xml:
+  sci-libs/dcmtk:    point the sur-uri to Debian, because upstream pulled the
+  tarball
+
 *dcmtk-3.6.1_pre20150924 (29 Oct 2015)
 
   29 Oct 2015;  <gw.fossdev@gmail.com> dcmtk-3.6.1_pre20150924:
   Initial ebuild
-
-
