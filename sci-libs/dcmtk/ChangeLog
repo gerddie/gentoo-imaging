@@ -1,3 +1,7 @@
+  01 Mar 2016;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20160216.ebuild:
+  sci-libs/dcmtk:          mask latest version, because the update doesn't go
+  smoothly
+
 *dcmtk-3.6.1_pre20160216 (01 Mar 2016)
 
   01 Mar 2016;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20160216.ebuild:
