@@ -20,44 +20,42 @@ IUSE="doc"
 RDEPEND="sci-libs/vtk
 	app-text/poppler
 	dev-libs/libxml2
- 	dev-libs/expat
+	dev-libs/expat
 	dev-libs/json-c
-        dev-libs/openssl:0
-        net-libs/socket++
-        media-libs/openjpeg:2
-        media-libs/charls
+		dev-libs/openssl:0
+		net-libs/socket++
+		media-libs/openjpeg:0
+		media-libs/charls
 	sys-libs/zlib
 	"
 
 DEPEND="app-arch/xz-utils
 	doc? ( app-doc/doxygen )
 	${RDEPEND}
-        "
+		"
 
 src_configure() {
-        local mycmakeargs=(
+		local mycmakeargs=(
 		-DGDCM_DOXYGEN_NO_FOOTER:BOOL=ON \
-                -DGDCM_BUILD_APPLICATIONS:BOOL=ON \
-                -DGDCM_BUILD_SHARED_LIBS:BOOL=ON \
-                -DGDCM_USE_PVRG:BOOL=ON \
-                -DGDCM_USE_SYSTEM_PVRG:BOOL=OFF \
-                -DGDCM_BUILD_TESTING:BOOL=OFF \
-                -DGDCM_USE_SYSTEM_EXPAT:BOOL=ON \
-                -DGDCM_USE_SYSTEM_UUID:BOOL=ON \
-                -DGDCM_USE_SYSTEM_ZLIB:BOOL=ON \
-                -DGDCM_USE_SYSTEM_OPENJPEG:BOOL=ON \
-                -DGDCM_USE_SYSTEM_OPENSSL:BOOL=ON \
-                -DGDCM_USE_SYSTEM_CHARLS:BOOL=ON \
-                -DGDCM_USE_SYSTEM_POPPLER:BOOL=ON \
-                -DGDCM_USE_SYSTEM_LIBXML2:BOOL=ON \
-                -DGDCM_USE_SYSTEM_JSON:BOOL=ON \
-                -DGDCM_USE_PARAVIEW:BOOL=OFF \
-                -DGDCM_USE_ACTIVIZ:BOOL=OFF \
-                -DGDCM_USE_SYSTEM_PAPYRUS3:BOOL=OFF \
-                -DGDCM_USE_SYSTEM_SOCKETXX:BOOL=ON \
-                -DPython_ADDITIONAL_VERSIONS:STRING=$(PYVER)
-        )
+				-DGDCM_BUILD_APPLICATIONS:BOOL=ON \
+				-DGDCM_BUILD_SHARED_LIBS:BOOL=ON \
+				-DGDCM_USE_PVRG:BOOL=ON \
+				-DGDCM_USE_SYSTEM_PVRG:BOOL=OFF \
+				-DGDCM_BUILD_TESTING:BOOL=OFF \
+				-DGDCM_USE_SYSTEM_EXPAT:BOOL=ON \
+				-DGDCM_USE_SYSTEM_UUID:BOOL=ON \
+				-DGDCM_USE_SYSTEM_ZLIB:BOOL=ON \
+				-DGDCM_USE_SYSTEM_OPENJPEG:BOOL=ON \
+				-DGDCM_USE_SYSTEM_OPENSSL:BOOL=ON \
+				-DGDCM_USE_SYSTEM_CHARLS:BOOL=ON \
+				-DGDCM_USE_SYSTEM_POPPLER:BOOL=ON \
+				-DGDCM_USE_SYSTEM_LIBXML2:BOOL=ON \
+				-DGDCM_USE_SYSTEM_JSON:BOOL=ON \
+				-DGDCM_USE_PARAVIEW:BOOL=OFF \
+				-DGDCM_USE_ACTIVIZ:BOOL=OFF \
+				-DGDCM_USE_SYSTEM_PAPYRUS3:BOOL=OFF \
+				-DGDCM_USE_SYSTEM_SOCKETXX:BOOL=ON \
+				-DPython_ADDITIONAL_VERSIONS:STRING=$(PYVER)
+		)
 	cmake-utils_src_configure
 }
-
-

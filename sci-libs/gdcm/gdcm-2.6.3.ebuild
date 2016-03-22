@@ -24,7 +24,7 @@ RDEPEND="sci-libs/vtk
 	dev-libs/json-c
 	dev-libs/openssl:0
 	net-libs/socket++
-	media-libs/openjpeg:2
+	media-libs/openjpeg:0
 	media-libs/charls
 	sys-libs/zlib
 	"
