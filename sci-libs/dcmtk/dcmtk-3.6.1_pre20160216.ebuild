@@ -31,6 +31,11 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${PN}-${MY_PV}
 
+
+PATCHES=(
+	"${FILESDIR}"/soversion_abi.patch
+)
+
 src_configure() {
 	mycmakeargs="${mycmakeargs}
 		-DBUILD_SHARED_LIBS=ON

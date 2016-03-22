@@ -1,3 +1,7 @@
+  22 Mar 2016;  <gerddie@gentoo.org> +files/soversion_abi.patch,
+  dcmtk-3.6.1_pre20160216.ebuild:
+  sci-libs/dcmtk: Add patch to create library name based on so-version
+
   01 Mar 2016;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20160216.ebuild:
   sci-libs/dcmtk:          mask latest version, because the update doesn't go
   smoothly
