@@ -11,20 +11,15 @@ HOMEPAGE="http://gdcm.sourceforge.net/"
 SRC_URI="mirror://sourceforge/gdcm/${P}.tar.bz2"
 RESTRICT="primaryuri"
 
-
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-DEPENDS="app-arch/xz-utils
-	doc? doxygen
-	app-text/docbook-xsl-ns-stylesheets
-	dev-libs/libxslt
-	${RDEPENDS}
-"
 
-RDEPENDS="sci-libs/vtk
+IUSE="doc"
+
+RDEPEND="sci-libs/vtk
 	app-text/poppler
-	dev-cpp/libxml2
+	dev-libs/libxml2
 	dev-libs/expat
 	dev-libs/json-c
 	dev-libs/openssl:0
@@ -34,6 +29,12 @@ RDEPENDS="sci-libs/vtk
 	sys-libs/zlib
 	"
 
+DEPEND="app-arch/xz-utils
+	doc? ( app-doc/doxygen )
+	app-text/docbook-xsl-ns-stylesheets
+	dev-libs/libxslt
+	${RDEPEND}
+"
 PATCHES=(
 	"${FILESDIR}"/dcm_group2_buggyfiles_fallback.patch
 )
