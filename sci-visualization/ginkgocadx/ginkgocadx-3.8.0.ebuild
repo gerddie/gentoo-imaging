@@ -8,6 +8,9 @@ inherit cmake-utils wxwidgets
 
 DESCRIPTION="An advanced DICOM viewer and dicomizer"
 HOMEPAGE="https://github.com/gerddie/ginkgocadx"
+SRC_URI="https://github.com/gerddie/ginkgocadx/archive/${PV}.tar.gz -> ${P}.tar.gz"
+RESTRICT="primaryuri"
+
 
 LICENSE="LGPL-3"
 SLOT="0"

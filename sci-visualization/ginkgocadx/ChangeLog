@@ -1,3 +1,6 @@
+  23 Mar 2016;  <gerddie@gentoo.org> ginkgocadx-3.8.0.ebuild:
+  sci-visualization/ginkgocadx: Add missing source URI
+
 *ginkgocadx-3.8.0 (23 Mar 2016)
 
   23 Mar 2016;  <gw.fossdev@gmail.com> +ginkgocadx-3.8.0.ebuild, +metadata.xml:
