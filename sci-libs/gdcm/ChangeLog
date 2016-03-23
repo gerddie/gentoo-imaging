@@ -1,3 +1,7 @@
+  23 Mar 2016;  <gerddie@gentoo.org> gdcm-2.6.1.ebuild, gdcm-2.6.2.ebuild,
+  gdcm-2.6.3.ebuild:
+  sci-libs/gdcm: Correct formatting
+
   22 Mar 2016;  <gerddie@gentoo.org> gdcm-2.6.1.ebuild, gdcm-2.6.2.ebuild,
   gdcm-2.6.3.ebuild:
   sci-libs/gdcm: Correct openjpeg dependency to use versiojn from slot:0
