@@ -37,6 +37,7 @@ DEPEND="app-arch/xz-utils
 "
 PATCHES=(
 	"${FILESDIR}"/dcm_group2_buggyfiles_fallback.patch
+	"${FILESDIR}"/CMake_FindOpenJPEG.patch # Backport from FreeBSD rP407679
 )
 
 src_configure() {
