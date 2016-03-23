@@ -1,3 +1,8 @@
+*vtk-6.3.0-r1 (23 Mar 2016)
+
+  23 Mar 2016;  <gerddie@gentoo.org> +vtk-6.3.0-r1.ebuild, metadata.xml:
+  sci-libs/vtk: move to qt5 only
+
   29 Jan 2016;  <gerddie@gentoo.org> vtk-6.3.0.ebuild:
   sci-libs/vtk:    Update html doc installation
 
