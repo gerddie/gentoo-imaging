@@ -1,4 +1,6 @@
 *ginkgocadx-3.8.0 (23 Mar 2016)
 
-  23 Mar 2016;  <gerddie@gentoo.org> +ginkgocadx-3.8.0.ebuild, +metadata.xml:
+  23 Mar 2016;  <gw.fossdev@gmail.com> +ginkgocadx-3.8.0.ebuild, +metadata.xml:
   sci-visualization/ginkgocadx:
+  Thanks to Sergey Alirzaev for providing the -9999 overlay from the booboo
+  overlay that was used as bases for this one.

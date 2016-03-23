@@ -2,23 +2,23 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=5
 
-inherit cmake-utils
+inherit cmake-utils wxwidgets
 
-DESCRIPTION="an advanced DICOM viewer and dicomizer that can also be used to convert png, jpeg, bmp, pdf, tiff to DICOM files"
+DESCRIPTION="An advanced DICOM viewer and dicomizer"
 HOMEPAGE="https://github.com/gerddie/ginkgocadx"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="
 	>=sci-libs/vtk-6.2[rendering]
 	>=sci-libs/itk-4.8
 	dev-db/sqlite
-	dev-libs/openssl
+	dev-libs/openssl:0
 	>=sci-libs/dcmtk-3.6.1_pre20150924
 	>=x11-libs/wxGTK-3.0.1:3.0[opengl]
 	x11-libs/gtk+:2"
