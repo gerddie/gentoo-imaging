@@ -19,8 +19,8 @@ IUSE="png gtk"
 # Block ebuild versions put in other categories
 RDEPEND="gtk? ( x11-libs/gtk+:2 )
 		png? ( media-libs/libpng:= )
-		!!sci-libs/xmedcon
-		!!media-gfx/xmedcon"
+		!sci-libs/xmedcon
+		!media-gfx/xmedcon"
 
 DEPEND="$RDEPEND"
 
