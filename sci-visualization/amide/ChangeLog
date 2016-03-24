@@ -1,3 +1,7 @@
+  24 Mar 2016;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild, amide-1.0.5.ebuild:
+  sci-visualization/amide:          change dependencies from sci-libsxmedcon to
+  sci-misc/xmedcon
+
   01 Mar 2016;  <gerddie@gentoo.org> metadata.xml:
   sci-visualization/amide:          Remove herde from metadata.xml
 
