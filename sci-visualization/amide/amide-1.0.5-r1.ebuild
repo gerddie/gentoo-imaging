@@ -24,6 +24,7 @@ fame? ( media-libs/libfame )
 gsl? ( sci-libs/gsl )
 dicom? ( sci-libs/dcmtk )
 vistaio? ( sci-libs/vistaio )
+!media-gfx/amide
 "
 
 DEPEND="${RDEPEND}"

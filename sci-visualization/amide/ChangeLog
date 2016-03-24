@@ -1,3 +1,7 @@
+  24 Mar 2016;  <gerddie@gentoo.org> -amide-1.0.5.ebuild, amide-1.0.5-r1.ebuild:
+  sci-visualization/amide:        * remove version 1.0.5       * Add blocker for
+  same package from category media-gfx
+
   24 Mar 2016;  <gerddie@gentoo.org> amide-1.0.5-r1.ebuild, amide-1.0.5.ebuild:
   sci-visualization/amide:          change dependencies from sci-libsxmedcon to
   sci-misc/xmedcon
