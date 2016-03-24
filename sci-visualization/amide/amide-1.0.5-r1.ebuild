@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -17,7 +17,7 @@ IUSE="gsl xmedcon fame volpack vistaio dicom debug doc jpeg2k"
 
 RDEPEND="
 >=x11-libs/gtk+-2.10:2
-xmedcon? ( >=sci-libs/xmedcon-0.10 )
+xmedcon? ( >=sci-misc/xmedcon-0.10 )
 jpeg2k? ( media-libs/openjpeg:2 )
 volpack? ( media-libs/volpack )
 fame? ( media-libs/libfame )

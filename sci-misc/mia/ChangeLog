@@ -1,3 +1,6 @@
+  24 Mar 2016;  <gerddie@gentoo.org> metadata.xml:
+  sci-misc/mia:          * remove obsolete herd tag from metadata.xml
+
 *mia-2.2.7 (07 Nov 2015)
 
   07 Nov 2015;  <gw.fossdev@gmail.com> +mia-2.2.7.ebuild:
