@@ -30,7 +30,7 @@ vistaio? ( sci-libs/vistaio )
 DEPEND="${RDEPEND}"
 
 src_prepare () {
-	epatch "${FILESDIR}/${PN}-1.0.5-ffmep_2.9.patch"
+	epatch "${FILESDIR}/${PN}-1.0.5-ffmpeg_2.9.patch"
 	epatch "${FILESDIR}/${PN}-1.0.5-gsl_2x.patch"
 	epatch "${FILESDIR}/${PN}-1.0.5-libc_2.23.patch"
 	use vistaio && epatch "${FILESDIR}/${PN}-1.0.5-vistaio.patch" &&  eautoreconf
