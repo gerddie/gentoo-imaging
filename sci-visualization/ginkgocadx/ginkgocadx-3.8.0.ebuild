@@ -24,7 +24,9 @@ DEPEND="
 	dev-libs/openssl:0
 	>=sci-libs/dcmtk-3.6.1_pre20150924
 	>=x11-libs/wxGTK-3.0.1:3.0[opengl]
-	x11-libs/gtk+:2"
+	x11-libs/gtk+:2
+	!media-gfx/ginkgocadx
+        "
 RDEPEND="${DEPEND}"
 
 pkg_setup() {

@@ -1,3 +1,7 @@
+  24 Mar 2016;  <gerddie@gentoo.org> ginkgocadx-3.8.0.ebuild:
+  sci-visualization/ginkgocadx:      * Add blocker for same packaage from media-
+  gfx
+
   23 Mar 2016;  <gerddie@gentoo.org> ginkgocadx-3.8.0.ebuild:
   sci-visualization/ginkgocadx: Add missing source URI
 
