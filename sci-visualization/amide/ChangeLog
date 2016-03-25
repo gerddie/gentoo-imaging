@@ -1,3 +1,8 @@
+  25 Mar 2016;  <gerddie@gentoo.org> +files/amide-1.0.5+jpeg2k-vistaio.patch,
+  +files/amide-1.0.5-jpeg2k.patch, -files/amide-1.0.5-vistaio.patch,
+  amide-1.0.5-r2.ebuild:
+  Add jpeg2k patch
+
 *amide-1.0.5-r2 (24 Mar 2016)
 
   24 Mar 2016;  <gerddie@gentoo.org> +amide-1.0.5-r2.ebuild,

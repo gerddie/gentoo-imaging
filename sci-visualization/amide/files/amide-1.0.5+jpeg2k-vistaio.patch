@@ -1,6 +1,6 @@
-diff -urN amide-1.0.5/configure.ac amide-1.0.5.new/configure.ac
---- amide-1.0.5/configure.ac	2014-01-27 04:04:07.000000000 +0100
-+++ amide-1.0.5.new/configure.ac	2015-11-05 21:28:33.000000000 +0100
+diff -r 5cfd398f7583 -r 1184d9b46cc7 amide-current/configure.ac
+--- a/amide-current/configure.ac	Tue Nov 03 13:56:59 2015 +0100
++++ b/amide-current/configure.ac	Thu Mar 24 18:10:39 2016 +0100
 @@ -239,6 +239,25 @@
  	echo "compiling without libecat/CTI file support"
  fi
@@ -27,9 +27,9 @@ diff -urN amide-1.0.5/configure.ac amide-1.0.5.new/configure.ac
  
  
  dnl Let people compile without having libmdc
-diff -urN amide-1.0.5/src/Makefile.am amide-1.0.5.new/src/Makefile.am
---- amide-1.0.5/src/Makefile.am	2014-01-25 23:22:33.000000000 +0100
-+++ amide-1.0.5.new/src/Makefile.am	2015-11-05 21:29:35.000000000 +0100
+diff -r 5cfd398f7583 -r 1184d9b46cc7 amide-current/src/Makefile.am
+--- a/amide-current/src/Makefile.am	Tue Nov 03 13:56:59 2015 +0100
++++ b/amide-current/src/Makefile.am	Thu Mar 24 18:10:39 2016 +0100
 @@ -29,7 +29,8 @@
  	$(AMIDE_LIBDCMDATA_CFLAGS) \
  	-I/usr/local/include \
@@ -45,10 +45,10 @@ diff -urN amide-1.0.5/src/Makefile.am amide-1.0.5.new/src/Makefile.am
  	$(FFMPEG_LIBS) \
  	$(AMIDE_LIBDCMDATA_LIBS) \
 +	$(VISTAIO_LIBS) \
+ 	$(AMIDE_LIBOPENJP2_LIBS) \
  	$(AMIDE_LDADD_WIN32) 
  
- ## 2007.10.28, gcc 3.4.4 the below may no longer be an issue, as 
-@@ -173,6 +175,8 @@
+@@ -174,6 +176,8 @@
  	ui_study_cb.h \
  	ui_time_dialog.c \
  	ui_time_dialog.h \
@@ -57,9 +57,9 @@ diff -urN amide-1.0.5/src/Makefile.am amide-1.0.5.new/src/Makefile.am
  	xml.c \
  	xml.h
  
-diff -urN amide-1.0.5/src/amitk_data_set.c amide-1.0.5.new/src/amitk_data_set.c
---- amide-1.0.5/src/amitk_data_set.c	2014-01-25 21:23:03.000000000 +0100
-+++ amide-1.0.5.new/src/amitk_data_set.c	2015-11-05 21:28:33.000000000 +0100
+diff -r 5cfd398f7583 -r 1184d9b46cc7 amide-current/src/amitk_data_set.c
+--- a/amide-current/src/amitk_data_set.c	Tue Nov 03 13:56:59 2015 +0100
++++ b/amide-current/src/amitk_data_set.c	Thu Mar 24 18:10:39 2016 +0100
 @@ -71,7 +71,7 @@
  #include "dcmtk_interface.h"
  #include "libecat_interface.h"
@@ -145,9 +145,9 @@ diff -urN amide-1.0.5/src/amitk_data_set.c amide-1.0.5.new/src/amitk_data_set.c
  #ifdef AMIDE_LIBECAT_SUPPORT      
    case AMITK_IMPORT_METHOD_LIBECAT:
      import_ds =libecat_import(filename, preferences, update_func, update_data);
-diff -urN amide-1.0.5/src/amitk_data_set.h amide-1.0.5.new/src/amitk_data_set.h
---- amide-1.0.5/src/amitk_data_set.h	2014-01-23 21:20:09.000000000 +0100
-+++ amide-1.0.5.new/src/amitk_data_set.h	2015-11-05 21:28:33.000000000 +0100
+diff -r 5cfd398f7583 -r 1184d9b46cc7 amide-current/src/amitk_data_set.h
+--- a/amide-current/src/amitk_data_set.h	Tue Nov 03 13:56:59 2015 +0100
++++ b/amide-current/src/amitk_data_set.h	Thu Mar 24 18:10:39 2016 +0100
 @@ -218,6 +218,9 @@
  #ifdef AMIDE_LIBECAT_SUPPORT
    AMITK_IMPORT_METHOD_LIBECAT,
@@ -158,10 +158,21 @@ diff -urN amide-1.0.5/src/amitk_data_set.h amide-1.0.5.new/src/amitk_data_set.h
  #ifdef AMIDE_LIBMDC_SUPPORT
    AMITK_IMPORT_METHOD_LIBMDC,
  #endif
-diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interface.c
---- amide-1.0.5/src/vistaio_interface.c	1970-01-01 01:00:00.000000000 +0100
-+++ amide-1.0.5.new/src/vistaio_interface.c	2015-11-05 21:28:33.000000000 +0100
-@@ -0,0 +1,351 @@
+diff -r 5cfd398f7583 -r 1184d9b46cc7 amide-current/src/dcmtk_interface.cc
+--- a/amide-current/src/dcmtk_interface.cc	Tue Nov 03 13:56:59 2015 +0100
++++ b/amide-current/src/dcmtk_interface.cc	Thu Mar 24 18:10:39 2016 +0100
+@@ -726,6 +726,7 @@
+         goto error;
+         break;
+     }
++    assert(buffer); 
+ 
+     if (result.bad()) {
+       g_warning(_("error reading in pixel data - DCMTK error: %s - Failed to read file %s"), result.text(), filename);
+diff -r 5cfd398f7583 -r 1184d9b46cc7 amide-current/src/vistaio_interface.c
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/amide-current/src/vistaio_interface.c	Thu Mar 24 18:10:39 2016 +0100
+@@ -0,0 +1,531 @@
 +/* -*- c-basic-offset: 2;  -*-  
 + * vistaio_interface.c
 + * 
@@ -209,7 +220,10 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +
 +
 +static VistaIOBoolean vistaio_get_pixel_signedness(VistaIOImage image);
-+static VistaIOBoolean vistaio_get_3dvector(VistaIOImage image, const gchar* name, AmitkPoint *voxel); 
++static VistaIOBoolean vistaio_get_3dvector(VistaIOImage image, const gchar* name, AmitkPoint *voxel);
++static VistaIOBoolean vistaio_get_rotation(VistaIOImage image, AmitkAxes matrix); 
++static VistaIOBoolean vistaio_get_voxelsize_from2d(VistaIOImage  image, AmitkPoint *voxel); 
++
 +static AmitkDataSet * do_vistaio_import(const gchar * filename, 
 +					AmitkPreferences * preferences,
 +					AmitkUpdateFunc update_func,
@@ -275,6 +289,7 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +  AmitkPoint origin = {0, 0, 0}; 
 +  AmitkModality modality = AMITK_MODALITY_MRI;
 +  AmitkDataSet * ds=NULL;
++  AmitkAxes new_axes; 
 +  
 +  VistaIOImage *images = NULL;
 +  VistaIOAttrList attr_list = NULL;
@@ -282,6 +297,8 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +  VistaIOBoolean is_pixel_unsigned = FALSE;
 +
 +  VistaIOBoolean origin_found = FALSE;
++  VistaIOBoolean voxelsize_found = FALSE;
++  VistaIOBoolean rotation_found = FALSE;
 +  
 +  int nimages = 0; 
 +  gboolean images_good = TRUE; 
@@ -340,11 +357,26 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +  in_pixel_repn = VistaIOPixelRepn(images[0]);
 +  is_pixel_unsigned = vistaio_get_pixel_signedness(images[0]);
 +
-+  vistaio_get_3dvector(images[0], "voxel", &voxel);
-+  origin_found = vistaio_get_3dvector(images[0], "position", &origin);
-+  if (!origin_found) 
-+    origin_found = vistaio_get_3dvector(images[0], "origin3d", &origin); 
++  voxelsize_found = vistaio_get_3dvector(images[0], "voxel", &voxel);
 +
++  
++  if (!voxelsize_found) {
++    voxelsize_found = vistaio_get_voxelsize_from2d(images[0], &voxel);
++  }
++  
++  origin_found = vistaio_get_3dvector(images[0], "origin3d", &origin); 
++  if (!origin_found) 
++    origin_found = vistaio_get_3dvector(images[0], "position", &origin);
++
++  
++  rotation_found = vistaio_get_rotation(images[0], new_axes);
++  
++  g_debug("Prototype image is: %dx%dx%d, repn:%d(%d), origin: (%f %f %f), voxelsize (%f %f %f)",
++	  dim.x, dim.y, dim.z,
++	  in_pixel_repn, is_pixel_unsigned,
++	  origin.x, origin.y, origin.z, 
++	  voxel.x, voxel.y, voxel.z); 
++  
 +  /* If there are more than one images, compare with the proto type */
 +  images_good = TRUE;
 +  
@@ -360,9 +392,9 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +    images_good &= is_pixel_unsigned == vistaio_get_pixel_signedness(images[i]);
 +    
 +    vistaio_get_3dvector(images[i], "voxel", &voxel_i);
-+    origin_found_i = vistaio_get_3dvector(images[i], "position", &origin_i);
++    origin_found_i = vistaio_get_3dvector(images[i], "origin3d", &origin_i);
 +    if (!origin_found_i)
-+      origin_found_i = vistaio_get_3dvector(images[i], "origin3d", &origin_i);
++      origin_found_i = vistaio_get_3dvector(images[i], "position", &origin_i);
 +    
 +    images_good &= voxel.x == voxel_i.x;
 +    images_good &= voxel.y == voxel_i.y;
@@ -382,6 +414,11 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +    dim.t = nimages; 
 +  }
 +  dim.g = 1;
++
++	  /* the origin is read directly from DICOM therefore we emulate what the dcmtk reader is doing */
++  origin.y *= -1.0; /* DICOM specifies y axis in wrong direction */
++  origin.z *= -1.0; /* DICOM specifies z axis in wrong direction */
++
 +
 +  /* Now we can create the images */
 +  /* pick our internal data format */
@@ -425,18 +462,23 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +  }
 +  bytes_per_image = format_size * dim.x * dim.y * dim.z;
 +
-+  ds->voxel_size = voxel;
-+
 +  /* Just use the file name, we can figure out somethink more sophisticated later*/
 +  amitk_object_set_name(AMITK_OBJECT(ds),filename);
 +
-+  /* todo: get the orientation from the file, sometimes it is stored there */
-+  
-+  
++  if (rotation_found) 
++    amitk_space_set_axes(AMITK_SPACE(ds), new_axes, zero_point);
++
++  /* This is just informal information */
 +  amitk_data_set_set_subject_orientation(ds, AMITK_SUBJECT_ORIENTATION_UNKNOWN);
 +  amitk_data_set_set_scan_date(ds, "Unknown"); 
-+  amitk_space_set_offset(AMITK_SPACE(ds), origin);
 +
++
++
++  amitk_space_set_offset(AMITK_SPACE(ds), origin);
++  amitk_data_set_set_voxel_size(ds, voxel);
++
++  
++  
 +  ds->scan_start = 0.0;
 +  
 +  g_debug("Now copying data: %d bytes per %d image(s)", bytes_per_image, dim.t); 
@@ -493,13 +535,15 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +
 +static VistaIOBoolean vistaio_get_3dvector(VistaIOImage image, const gchar* attribute_name, AmitkPoint *voxel)
 +{
-+  VistaIOString voxel_string; 
++  VistaIOString voxel_string;
++  float x,y,z;
++  
 +  if (VistaIOGetAttr (VistaIOImageAttrList(image), attribute_name, NULL, VistaIOStringRepn, 
 +		      &voxel_string) != VistaIOAttrFound) {
 +    g_debug("VistaIO: Attribute '%s' not found in image", attribute_name); 
 +    return FALSE;
 +  }
-+  float x,y,z; 
++
 +  if (sscanf(voxel_string, "%f %f %f", &x, &y, &z) != 3) {
 +    g_debug("VistaIO: The string '%s' could not be parsed properly to obtain three float values", voxel_string);
 +    return FALSE;
@@ -511,11 +555,158 @@ diff -urN amide-1.0.5/src/vistaio_interface.c amide-1.0.5.new/src/vistaio_interf
 +  return TRUE;
 +}
 +
++static VistaIOBoolean vistaio_get_voxelsize_from2d(VistaIOImage  image, AmitkPoint *voxel)
++{
++  VistaIOString pixel_string;
++  float x, y;
++  VistaIOFloat slice_thickness, spacing;
++  VistaIOBoolean thickness_found = FALSE; 
++  VistaIOBoolean spacing_found = FALSE; 
++  
++  if (VistaIOGetAttr (VistaIOImageAttrList(image), "pixel", NULL, VistaIOStringRepn, 
++		      &pixel_string) != VistaIOAttrFound) {
++    g_debug("VistaIO: Attribute 'pixel' not found in image"); 
++    return FALSE;
++  }
++  
++  if (sscanf(pixel_string, "%f %f", &x, &y) != 2) {
++    g_debug("VistaIO: The string '%s' could not be parsed properly to obtain two float values", pixel_string);
++    return FALSE;
++  }else {
++    voxel->x = x;
++    voxel->y = y;
++  }
++
++  thickness_found = VistaIOGetAttr (VistaIOImageAttrList(image), "SliceThickness", NULL, VistaIOFloatRepn, 
++				    &slice_thickness);
++  
++  spacing_found = VistaIOGetAttr (VistaIOImageAttrList(image), "SpacingBetweenSlices", NULL, VistaIOFloatRepn, 
++				  &spacing); 
++  
++  if (spacing_found) {
++    voxel->z = spacing; 
++    if (thickness_found) {
++      if (slice_thickness != spacing)
++	g_debug("Slice thickness %f != slice spacing %f, use spacing", slice_thickness, spacing); 
++    }
++  } else if (thickness_found) {
++    voxel->z = slice_thickness; 
++  } else {
++    return FALSE; 
++  }
++  return TRUE; 
++}
++
++static VistaIOBoolean vistaio_get_rotation(VistaIOImage image, AmitkAxes matrix)
++{
++  int name_length = 0; 
++  char *splitname = NULL; 
++  VistaIOString voxel_string; 
++  if (VistaIOGetAttr (VistaIOImageAttrList(image), "rotation3d", NULL, VistaIOStringRepn, 
++		      &voxel_string) != VistaIOAttrFound) {
++    g_debug("VistaIO: Attribute 'rotation3d' not found in image"); 
++    return FALSE;
++  }
++
++  /* Split the input data */
++  splitname = strchr(voxel_string, '=');
++  if (!splitname) {
++    if (strcmp(voxel_string, "rot-identity")) {
++      matrix[AMITK_AXIS_X].x = 1;
++      matrix[AMITK_AXIS_X].y = 0;
++      matrix[AMITK_AXIS_X].z = 0;
++
++      matrix[AMITK_AXIS_Y].x = 0;
++      matrix[AMITK_AXIS_Y].y = 1;
++      matrix[AMITK_AXIS_Y].z = 0;
++
++      matrix[AMITK_AXIS_Z].x = 0;
++      matrix[AMITK_AXIS_Z].y = 0;
++      matrix[AMITK_AXIS_Z].z = 1;
++      return TRUE; 
++    }else{
++      g_debug("VistaIO: Unexpected 'rotation3d' attribute '%s'",  voxel_string); 
++      return FALSE; 
++    }
++  }
++  
++  name_length = splitname - voxel_string;
++  ++splitname; 
++
++  g_debug("Found 'rotation3d' as '%s' witgh indicator length %d", voxel_string, name_length); 
++  
++  if (!strncmp(voxel_string, "rot-matrix", name_length)) {
++    float xx, xy,xz, yx, yy, yz, zx, zy, zz;
++    if (sscanf(splitname,"%f,%f,%f;%f,%f,%f;%f,%f,%f",
++	       &xx, &xy, &xz, &yx, &yy, &yz, &zx, &zy, &zz) != 9) {
++      g_debug("VistaIO: The string '%s' could not be parsed properly "
++	      "to obtain nine float values for the 'rotation3d' matrix", splitname);
++      return FALSE;
++    }
++    matrix[AMITK_AXIS_X].x = xx;
++    matrix[AMITK_AXIS_X].y = xy;
++    matrix[AMITK_AXIS_X].z = -xz;
++    
++    matrix[AMITK_AXIS_Y].x = -yx;
++    matrix[AMITK_AXIS_Y].y = -yy;
++    matrix[AMITK_AXIS_Y].z = -yz;
++    
++    matrix[AMITK_AXIS_Z].x = -zx;
++    matrix[AMITK_AXIS_Z].y = -zy;
++    matrix[AMITK_AXIS_Z].z = -zz;
++    return TRUE;
++    
++  } else if  (!strncmp(voxel_string, "rot-quaternion", name_length)) {
++    float x, y, z, w;
++    double a2, b2, c2, d2, bc, ad, bd, ac, cd, ab; 
++    
++    if (sscanf(splitname,"%f,%f,%f,%f",
++	       &w, &x, &y, &z) != 4) {
++      g_debug("VistaIO: The string '%s' could not be parsed properly "
++	      "to obtain four float values for the 'rotation3d' quaternion", splitname);
++      return FALSE; 
++    }
++    /* Evaluate the matrix from the quaternion */
++
++    a2 = w * w;
++    b2 = x * x;
++    c2 = y * y;
++    d2 = z * z;
++    
++    bc = 2.0 * x * y; 
++    ad = 2.0 * w * z; 
++    bd = 2.0 * x * z; 
++    ac = 2.0 * w * y; 
++    cd = 2.0 * y * z; 
++    ab = 2.0 * w * x; 
++
++    
++    matrix[AMITK_AXIS_X].x = a2 + b2 - c2 - d2;
++    matrix[AMITK_AXIS_X].y = -(bc - ad);
++    matrix[AMITK_AXIS_X].z = -(bd + ac);
++    
++    matrix[AMITK_AXIS_Y].x = bc + ad;
++    matrix[AMITK_AXIS_Y].y = -(a2 - b2 + c2 - d2);
++    matrix[AMITK_AXIS_Y].z = -(cd - ab);
++    
++    matrix[AMITK_AXIS_Z].x = bd - ac;
++    matrix[AMITK_AXIS_Z].y = -(cd + ab);
++    matrix[AMITK_AXIS_Z].z = -(a2 - b2 - c2 + d2);
++    return TRUE;
++    
++  } else {
++    g_debug("VistaIO: Unexpected 'rotation3d' attribute '%s'",  voxel_string);
++    return FALSE; 
++  }
++  
++  
++}
++
 +
 +#endif /* AMIDE_VISTAIO_SUPPORT */
-diff -urN amide-1.0.5/src/vistaio_interface.h amide-1.0.5.new/src/vistaio_interface.h
---- amide-1.0.5/src/vistaio_interface.h	1970-01-01 01:00:00.000000000 +0100
-+++ amide-1.0.5.new/src/vistaio_interface.h	2015-11-05 21:28:33.000000000 +0100
+diff -r 5cfd398f7583 -r 1184d9b46cc7 amide-current/src/vistaio_interface.h
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/amide-current/src/vistaio_interface.h	Thu Mar 24 18:10:39 2016 +0100
 @@ -0,0 +1,58 @@
 +/* vistaio_interface.h
 + *

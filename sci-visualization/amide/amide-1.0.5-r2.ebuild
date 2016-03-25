@@ -30,10 +30,14 @@ vistaio? ( sci-libs/vistaio )
 DEPEND="${RDEPEND}"
 
 src_prepare () {
+	if use vistaio -o use jpeg2k ; then
+		epatch "${FILESDIR}/${PN}-1.0.5-jpeg2k.patch" &&
+		epatch "${FILESDIR}/${PN}-1.0.5+jpeg2k-vistaio.patch"
+		eautoreconf
+	fi
 	epatch "${FILESDIR}/${PN}-1.0.5-ffmpeg_2.9.patch"
 	epatch "${FILESDIR}/${PN}-1.0.5-gsl_2x.patch"
 	epatch "${FILESDIR}/${PN}-1.0.5-libc_2.23.patch"
-	use vistaio && epatch "${FILESDIR}/${PN}-1.0.5-vistaio.patch" &&  eautoreconf
 }
 
 src_configure () {
