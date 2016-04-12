@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer>
+    <email>gw.fossdev@gmail.com</email>
+  </maintainer>
+  <longdescription lang="en">
+    TEMPO (Topographic Eeg Mapping Program) is software for 3D visualization
+    of brain electrical activity.  TEMPO is able to read EEG recordings in
+    standard EDF format and to create animated sequence of 3D topographic
+    maps with EEG activity color-coded over scalp region.  The primary
+    strength of TEMPO approach to topographic mapping is ability to examine
+    the same map from different viewpoints - user is able to navigate around
+    head object using mouse.  Individual topographic maps could be saved in
+    PNG format for future examination.  The animation, as well as mapping
+    parameters, are controllable through corresponding graphical user
+    interface.
+  </longdescription>
+</pkgmetadata>

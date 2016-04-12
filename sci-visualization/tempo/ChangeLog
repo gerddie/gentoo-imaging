@@ -1,0 +1,5 @@
+*tempo-9999 (12 Apr 2016)
+
+  12 Apr 2016;  <gerddie@gentoo.org> +files/add_glu_library.patch,
+  +metadata.xml, +tempo-9999.ebuild:
+  sci-visualization/tempo:          Add initial ebuild
