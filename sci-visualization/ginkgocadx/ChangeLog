@@ -1,3 +1,8 @@
+*ginkgocadx-3.8.2 (13 Apr 2016)
+
+  13 Apr 2016;  <gerddie@gentoo.org> +ginkgocadx-3.8.2.ebuild:
+  sci-visualization/ginkgocadx:         Add ebuild for latest upstream release.
+
   24 Mar 2016;  <gerddie@gentoo.org> ginkgocadx-3.8.0.ebuild:
   sci-visualization/ginkgocadx:      * Add blocker for same packaage from media-
   gfx
