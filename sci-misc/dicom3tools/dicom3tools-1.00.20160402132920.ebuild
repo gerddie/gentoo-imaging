@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils versionator base
+inherit eutils versionator
 
 MY_PV="$(get_version_component_range 1-2 $PV).snapshot.$(get_version_component_range 3 $PV)"
 S="${WORKDIR}/${PN}_${MY_PV}"
@@ -31,6 +31,12 @@ PATCHES=(
 	"${FILESDIR}/codeblockstylefix.patch"
 	"${FILESDIR}/strip.patch"
 )
+
+src_prepare() {
+	[[ ${PATCHES[@]} ]] && epatch "${PATCHES[@]}"
+	debug-print "$FUNCNAME: applying user patches"
+	epatch_user
+}
 
 src_configure() {
 	sh Configure

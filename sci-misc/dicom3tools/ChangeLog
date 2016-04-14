@@ -1,3 +1,6 @@
+  14 Apr 2016;  <gerddie@gentoo.org> dicom3tools-1.00.20160402132920.ebuild:
+  sci-misc/dicom3tools:          remove use of deprecated base eclass
+
 *dicom3tools-1.00.20160402132920 (14 Apr 2016)
 
   14 Apr 2016;  <gerddie@gentoo.org> +dicom3tools-1.00.20160402132920.ebuild,
