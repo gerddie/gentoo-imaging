@@ -1,3 +1,9 @@
+*gdcm-2.6.3-r1 (17 Apr 2016)
+
+  17 Apr 2016;  <gerddie@gentoo.org> +files/vtk63.patch, +gdcm-2.6.3-r1.ebuild,
+  -gdcm-2.6.3.ebuild, metadata.xml:
+  sci-libs/gdcm:          2.6.3: Add support for vtk use and python bindings
+
   23 Mar 2016;  <gerddie@gentoo.org> gdcm-2.6.1.ebuild, gdcm-2.6.2.ebuild,
   gdcm-2.6.3.ebuild:
   sci-libs/gdcm: Correct formatting

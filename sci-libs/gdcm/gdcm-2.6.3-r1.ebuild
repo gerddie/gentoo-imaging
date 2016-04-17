@@ -4,7 +4,11 @@
 
 EAPI=5
 
-inherit  cmake-utils
+PYTHON_COMPAT=( python2_7 )
+
+inherit  eutils  cmake-utils python-single-r1
+
+PYVER="2.7"
 
 DESCRIPTION="GDCM is an implementation of the DICOM standard."
 HOMEPAGE="http://gdcm.sourceforge.net/"
@@ -15,9 +19,9 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
-IUSE="doc"
+IUSE="doc vtk python"
 
-RDEPEND="sci-libs/vtk
+RDEPEND="vtk? ( >=sci-libs/vtk-6.3 )
 	app-text/poppler
 	dev-libs/libxml2
 	dev-libs/expat
@@ -33,11 +37,16 @@ DEPEND="app-arch/xz-utils
 	doc? ( app-doc/doxygen )
 	app-text/docbook-xsl-ns-stylesheets
 	dev-libs/libxslt
+	python? ( ${PYTHON_DEPS}
+			  >=dev-lang/swig-3.0
+			  >=sci-libs/vtk-6.3[python]
+	)
 	${RDEPEND}
 "
 PATCHES=(
 	"${FILESDIR}"/dcm_group2_buggyfiles_fallback.patch
 	"${FILESDIR}"/CMake_FindOpenJPEG.patch # Backport from FreeBSD rP407679
+	"${FILESDIR}"/vtk63.patch
 )
 
 src_configure() {
@@ -60,8 +69,21 @@ src_configure() {
 		-DGDCM_USE_PARAVIEW:BOOL=OFF \
 		-DGDCM_USE_ACTIVIZ:BOOL=OFF \
 		-DGDCM_USE_SYSTEM_PAPYRUS3:BOOL=OFF \
-		-DGDCM_USE_SYSTEM_SOCKETXX:BOOL=ON \
-		-DPython_ADDITIONAL_VERSIONS:STRING=$(PYVER)
+		-DGDCM_USE_SYSTEM_SOCKETXX:BOOL=ON
+	)
+
+	if use vtk; then
+		mycmakeargs+=(
+			-DGDCM_USE_VTK:BOOL=ON
 		)
+	fi
+	if use python; then
+		mycmakeargs+=(
+			-DPython_ADDITIONAL_VERSIONS:STRING=${PYVER}
+			-DGDCM_INSTALL_PYTHONMODULE_DIR:STRING=lib/python${PYVER}/site-packages
+			-DGDCM_WRAP_PYTHON:BOOL=ON
+		)
+	fi
+
 	cmake-utils_src_configure
 }
