@@ -1,3 +1,9 @@
+*vtk-6.3.0-r2 (21 Apr 2016)
+
+  21 Apr 2016;  <gerddie@gentoo.org> +files/20_soversion-sharedlib.patch,
+  +vtk-6.3.0-r2.ebuild:
+  sci-libs/vtk:          Add proper SONAME to the library
+
 *vtk-6.3.0-r1 (23 Mar 2016)
 
   23 Mar 2016;  <gerddie@gentoo.org> +vtk-6.3.0-r1.ebuild, metadata.xml:
