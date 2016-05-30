@@ -2,6 +2,11 @@
 # Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*itk-4.10.0 (30 May 2016)
+
+  30 May 2016;  <gerddie@gentoo.org> +itk-4.10.0.ebuild:
+  sci-libs/itk:          Add ebuild for itk-4.10
+
 *itk-4.9.1 (17 Apr 2016)
 
   17 Apr 2016;  <gerddie@gentoo.org> +itk-4.9.1.ebuild:
