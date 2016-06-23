@@ -1,3 +1,8 @@
+*dcmtk-3.6.1_pre20160216-r1 (23 Jun 2016)
+
+  23 Jun 2016;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20160216-r1.ebuild:
+  sci-libs/dcmtk: Add iconv use flag to compile with iconv enabled
+
   22 Mar 2016;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20160216.ebuild:
   sci-libs/dcmtk: umask the new version for testing
 
