@@ -2,6 +2,15 @@
 # Copyright 1999-2016 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*itk-4.10.0-r1 (06 Jul 2016)
+
+  06 Jul 2016;  <gerddie@gentoo.org>
+  +files/ITKv3MultiResImageRegistrationTest_correct.patch,
+  +files/atomic_load.patch, +files/flatStructuringElementTest_fix_rescale.patch,
+  +files/itk4.10-correct_itkMathDetail_include-order.patch,
+  +files/itk4.10-enable-system-nifti.patch, +itk-4.10.0-r1.ebuild:
+  sci-libs/itk:    Fix some bugs and make it possible to use system nifti
+
 *itk-4.10.0 (30 May 2016)
 
   30 May 2016;  <gerddie@gentoo.org> +itk-4.10.0.ebuild:
