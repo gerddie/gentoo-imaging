@@ -30,6 +30,7 @@ RDEPEND="
 	sci-libs/dcmtk
 	dev-libs/expat
 	sci-libs/gdcm
+	sci-libs/nifticlib
 	sci-libs/hdf5:0=[cxx]
 	sys-libs/zlib:0=
 	virtual/jpeg:0=
