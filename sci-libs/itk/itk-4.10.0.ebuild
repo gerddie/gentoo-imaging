@@ -38,7 +38,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	python? ( ${PYTHON_DEPS}
 			  >=dev-lang/swig-3.0
-			  >=dev-cpp/CastXML-0.0.0_pre1 )
+			  >=dev-cpp/CastXML-0.0.0_pre4 )
 	doc? ( app-doc/doxygen )
 "
 
