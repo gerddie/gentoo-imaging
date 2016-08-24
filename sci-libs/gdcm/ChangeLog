@@ -1,3 +1,8 @@
+*gdcm-2.6.5 (24 Aug 2016)
+
+  24 Aug 2016;  <gerddie@gentoo.org> +gdcm-2.6.5.ebuild:
+  sci-libs/gdcm:          Add ebuild for new upstream 2.6.5
+
 *gdcm-2.6.3-r1 (17 Apr 2016)
 
   17 Apr 2016;  <gerddie@gentoo.org> +files/vtk63.patch, +gdcm-2.6.3-r1.ebuild,
