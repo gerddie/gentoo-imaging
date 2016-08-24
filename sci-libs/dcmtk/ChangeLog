@@ -1,3 +1,8 @@
+*dcmtk-3.6.1_pre20160630 (24 Aug 2016)
+
+  24 Aug 2016;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20160630.ebuild:
+  sci-libs/dcmtk:          new upstream release
+
 *dcmtk-3.6.1_pre20160216-r1 (23 Jun 2016)
 
   23 Jun 2016;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20160216-r1.ebuild:
