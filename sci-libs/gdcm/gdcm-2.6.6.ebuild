@@ -27,8 +27,7 @@ RDEPEND="vtk? ( >=sci-libs/vtk-6.3 )
 	dev-libs/expat
 	dev-libs/json-c
 	dev-libs/openssl:0
-	net-libs/socket++
-	media-libs/openjpeg:0
+	media-libs/openjpeg:2
 	media-libs/charls
 	sys-libs/zlib
 	"
@@ -43,12 +42,6 @@ DEPEND="app-arch/xz-utils
 	)
 	${RDEPEND}
 "
-PATCHES=(
-	"${FILESDIR}"/dcm_group2_buggyfiles_fallback.patch
-	"${FILESDIR}"/CMake_FindOpenJPEG.patch # Backport from FreeBSD rP407679
-	"${FILESDIR}"/vtk63.patch
-)
-
 src_configure() {
 	local mycmakeargs=(
 		-DGDCM_DOXYGEN_NO_FOOTER:BOOL=ON \
@@ -69,7 +62,7 @@ src_configure() {
 		-DGDCM_USE_PARAVIEW:BOOL=OFF \
 		-DGDCM_USE_ACTIVIZ:BOOL=OFF \
 		-DGDCM_USE_SYSTEM_PAPYRUS3:BOOL=OFF \
-		-DGDCM_USE_SYSTEM_SOCKETXX:BOOL=ON
+		-DGDCM_USE_SYSTEM_SOCKETXX:BOOL=OFF
 	)
 
 	if use vtk; then
