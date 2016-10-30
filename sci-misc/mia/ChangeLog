@@ -1,3 +1,10 @@
+*mia-2.4.3 (30 Oct 2016)
+
+  30 Oct 2016;  <gerddie@gentoo.org> +mia-2.4.3.ebuild, metadata.xml:
+  sci-misc/mia:    * New upstream version 2.4.3    * add tbb use flag since one
+  can now compile mia without tbb      when a compiler is used that supports
+  c++11 threads
+
   24 Mar 2016;  <gerddie@gentoo.org> metadata.xml:
   sci-misc/mia:          * remove obsolete herd tag from metadata.xml
 

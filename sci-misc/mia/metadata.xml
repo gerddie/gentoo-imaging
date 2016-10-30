@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <maintainer>
+  <maintainer type="person">
     <email>gw.fossdev@gmail.com</email>
   </maintainer>
+  <use>
+    <flag name="tbb">Use Intel threading building blocks</flag>
+  </use>
   <longdescription lang="en">
     MIA provides a combination of command line tools, plug-ins, and libraries
     that make it possible run image processing tasks interactively in a
