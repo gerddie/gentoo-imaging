@@ -1,3 +1,11 @@
+*CastXML-0.0.0_pre5 (07 Dec 2016)
+
+  07 Dec 2016;  <gerddie@gentoo.org> +CastXML-0.0.0_pre5.ebuild,
+  -CastXML-0.0.0_pre1-r1.ebuild, -CastXML-0.0.0_pre1.ebuild,
+  -CastXML-0.0.0_pre2.ebuild, -CastXML-0.0.0_pre3.ebuild,
+  -CastXML-0.0.0_pre4.ebuild, metadata.xml:
+  dev-cpp/CastXML:    Add pre5 shapshot and delete all old versions
+
 *CastXML-0.0.0_pre4 (21 Jul 2016)
 
   21 Jul 2016;  <gerddie@gentoo.org> +CastXML-0.0.0_pre4.ebuild:
