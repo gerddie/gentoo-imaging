@@ -1,3 +1,6 @@
+  09 Jan 2017;  <gerddie@gentoo.org> metadata.xml:
+  sci-visualization:    Add maintainer type for various ebuilds
+
 *itksnap-3.4.0-r1 (30 Jan 2016)
 
   30 Jan 2016;  <gerddie@gentoo.org> +files/vtk_6_3.patch,

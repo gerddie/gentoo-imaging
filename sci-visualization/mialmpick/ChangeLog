@@ -1,5 +1,7 @@
+  09 Jan 2017;  <gerddie@gentoo.org> metadata.xml:
+  sci-visualization:    Add maintainer type for various ebuilds
+
 *mialmpick-0.2.9 (31 Oct 2015)
 
   31 Oct 2015;  <gw.fossdev@gmail.com> mialmpick-0.2.9.ebuild:
   correct ebuild to satisfy repoman
-
