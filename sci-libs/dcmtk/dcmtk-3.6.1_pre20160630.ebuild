@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -11,8 +11,7 @@ MY_PV=${MY_PVX/-r[0-9]*/}
 
 DESCRIPTION="The DICOM Toolkit"
 HOMEPAGE="http://dicom.offis.de/dcmtk.php.en"
-SRC_URI="http://dicom.offis.de/download/${PN}/snapshot/${PN}-${MY_PV}.tar.gz"
-#SRC_URI="http://http.debian.net/debian/pool/main/d/dcmtk/dcmtk_3.6.1~20150924.orig.tar.gz"
+SRC_URI="http://dicom.offis.de/download/${PN}/snapshot/old/${PN}-${MY_PV}.tar.gz"
 LICENSE="BSD"
 
 KEYWORDS="~amd64"

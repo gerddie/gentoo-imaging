@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -15,7 +15,7 @@ SRC_URI="http://dicom.offis.de/download/${PN}/snapshot/${PN}-${MY_PV}.tar.gz"
 #SRC_URI="http://http.debian.net/debian/pool/main/d/dcmtk/dcmtk_3.6.1~20150924.orig.tar.gz"
 LICENSE="BSD"
 
-KEYWORDS="~amd64"
+KEYWORDS=""
 SLOT="0"
 IUSE="doc png ssl tcpd +threads tiff xml zlib iconv"
 

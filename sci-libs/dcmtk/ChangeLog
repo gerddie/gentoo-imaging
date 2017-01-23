@@ -1,3 +1,12 @@
+*dcmtk-3.6.1_pre20161102 (23 Jan 2017)
+
+  23 Jan 2017;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20161102.ebuild,
+  -dcmtk-3.6.1_pre20150924.ebuild, -dcmtk-3.6.1_pre20160216-r1.ebuild,
+  -dcmtk-3.6.1_pre20160216.ebuild, dcmtk-3.6.1_pre20160630.ebuild, metadata.xml:
+  sci-libs/dcmtk:          * correct URL for old package (thanks olifre@github)
+  Closes: #6          * Remove some old versions              * Add latest
+  snapshot masked for now because it breaks            sci-libs/itk
+
 *dcmtk-3.6.1_pre20160630 (24 Aug 2016)
 
   24 Aug 2016;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20160630.ebuild:
