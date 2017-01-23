@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sci-libs/vtk/vtk-6.3.0.ebuild,v 1.2 2015/01/06 09:45:16 aballier Exp $
 
@@ -99,7 +99,7 @@ RDEPEND="
 	tbb? ( dev-cpp/tbb )
 	tcl? ( dev-lang/tcl )
 	tk? ( dev-lang/tk )
-	video_cards_nvidia? ( media-video/nvidia-settings )
+	video_cards_nvidia? ( x11-drivers/nvidia-drivers[tools,static-libs] )
 	web? (
 		${WEBAPP_DEPEND}
 		python? (
@@ -126,6 +126,10 @@ pkg_setup() {
 
 	append-cppflags -D__STDC_CONSTANT_MACROS -D_UNICODE
 }
+
+PATCHES=(
+	"${FILESDIR}"/20_soversion-sharedlib.patch
+)
 
 src_prepare() {
 	sed \
