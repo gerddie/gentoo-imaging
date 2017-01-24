@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id:$
 
@@ -10,12 +10,12 @@ inherit eutils toolchain-funcs cmake-utils python-single-r1
 
 MYPN=InsightToolkit
 MYP=${MYPN}-${PV}
-DOC_PV=4.5.0
+DOC_PV=4.10.0
 
 DESCRIPTION="NLM Insight Segmentation and Registration Toolkit"
 HOMEPAGE="http://www.itk.org"
 SRC_URI="mirror://sourceforge/${PN}/${MYP}.tar.xz
-	doc? ( mirror://sourceforge/${PN}/Doxygen${MYPN}-${DOC_PV}.tar.gz )"
+	doc? ( mirror://sourceforge/${PN}/InsightDoxygenDocHtml-${DOC_PV}.tar.gz )"
 RESTRICT="primaryuri"
 
 LICENSE="Apache-2.0"
@@ -27,7 +27,10 @@ RDEPEND="
 	dev-libs/double-conversion:0=
 	media-libs/libpng:0=
 	media-libs/tiff:0=
-	sci-libs/dcmtk:0=
+	sci-libs/dcmtk
+	dev-libs/expat
+	sci-libs/gdcm
+	sci-libs/nifticlib
 	sci-libs/hdf5:0=[cxx]
 	sys-libs/zlib:0=
 	virtual/jpeg:0=
@@ -37,7 +40,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	python? ( ${PYTHON_DEPS}
 			  >=dev-lang/swig-3.0
-			  >=dev-cpp/gccxml-0.9.0_pre20120309 )
+			  >=dev-cpp/CastXML-0.0.0_pre1 )
 	doc? ( app-doc/doxygen )
 "
 
@@ -45,14 +48,12 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 S="${WORKDIR}/${MYP}"
 
-#PATCHES=(
-#	"${FILESDIR}"/0001-BUG-Wrap-TransformFileReader-TransformFileWriter.patch
-#	"${FILESDIR}"/0002-COMP-Fixed-itkQuasiNewtonOptimizerv4-wrapping-warnin.patch
-#	"${FILESDIR}"/0003-COMP-Fixed-itkGradientDescentOptimizerv4-wrapping-wa.patch
-#	"${FILESDIR}"/0004-COMP-Warp-OptimizerParameterScalesEstimatorTemplate.patch
-#	"${FILESDIR}"/0005-make-gdcm-helper-library-static.patch
-#	"${FILESDIR}"/nrrdio-linking.patch
-#)
+PATCHES=(
+	"${FILESDIR}/atomic_load.patch"
+	"${FILESDIR}/flatStructuringElementTest_fix_rescale.patch"
+	"${FILESDIR}/ITKv3MultiResImageRegistrationTest_correct.patch"
+	"${FILESDIR}/itk4.10-enable-system-nifti.patch"
+)
 
 pkg_pretend() {
 	if [[ -z ${ITK_COMPUTER_MEMORY_SIZE} ]]; then
@@ -69,30 +70,31 @@ pkg_pretend() {
 }
 
 src_configure() {
-	sed -i \
-		-e '/find_package/d' \
-		Modules/ThirdParty/DoubleConversion/CMakeLists.txt || die
 
 	local mycmakeargs=(
 		-DBUILD_SHARED_LIBS=ON
 		-DITK_USE_SYSTEM_DCMTK=ON
 		-DITK_USE_SYSTEM_DOUBLECONVERSION=ON
-		-DITK_USE_SYSTEM_GCCXML=ON
+		-DITK_USE_SYSTEM_CASTXML=ON
 		-DITK_USE_SYSTEM_HDF5=ON
 		-DITK_USE_SYSTEM_JPEG=ON
+		-DITK_USE_SYSTEM_EXPAT=ON
 		-DITK_USE_SYSTEM_PNG=ON
 		-DITK_USE_SYSTEM_SWIG=ON
+		-DITK_USE_SYSTEM_GDCM=ON
 		-DITK_USE_SYSTEM_TIFF=ON
 		-DITK_USE_SYSTEM_ZLIB=ON
 		-DITK_BUILD_DEFAULT_MODULES=ON
+		-DITK_FORBID_DOWNLOADS=ON
 		-DITK_COMPUTER_MEMORY_SIZE="${ITK_COMPUTER_MEMORY_SIZE:-1}"
+				-DModule_ITKDCMTK=ON
+				-DModule_ITKIODCMTK=ON
+				-DITK_FORBID_DOWNLOADS=ON
 		-DWRAP_ITK_JAVA=OFF
 		-DWRAP_ITK_TCL=OFF
-		-Ddouble-conversion_INCLUDE_DIRS="${EPREFIX}/usr/include/double-conversion"
-		-Ddouble-conversion_LIBRARIES="-ldouble-conversion"
 		$(cmake-utils_use_build test TESTING)
 		$(cmake-utils_use_build examples EXAMPLES)
-		$(cmake-utils_use review ITK_USE_REVIEW)
+		$(cmake-utils_use review Module_ITKReview)
 		$(cmake-utils_use itkv3compat ITKV3_COMPATIBILITY)
 		$(cmake-utils_use sse2 VNL_CONFIG_ENABLE_SSE2)
 	)
