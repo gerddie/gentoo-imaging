@@ -103,6 +103,7 @@ RDEPEND="
 	web? (
 		${WEBAPP_DEPEND}
 		python? (
+			dev-python/six[${PYTHON_USEDEP}]
 			dev-python/autobahn[${PYTHON_USEDEP}]
 			dev-python/twisted-core[${PYTHON_USEDEP}]
 			dev-python/zope-interface[${PYTHON_USEDEP}]
@@ -188,6 +189,7 @@ src_configure() {
 		-DVTK_USE_SYSTEM_NETCDF=ON
 		-DVTK_USE_SYSTEM_OGGTHEORA=ON
 		-DVTK_USE_SYSTEM_PNG=ON
+		-DVTK_USE_SYSTEM_SIX=ON
 		-DVTK_USE_SYSTEM_TIFF=ON
 		-DVTK_USE_SYSTEM_TWISTED=ON
 		-DVTK_USE_SYSTEM_XDMF2=OFF
