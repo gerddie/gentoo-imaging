@@ -1,3 +1,7 @@
+  29 Jan 2017;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20160630.ebuild,
+  dcmtk-3.6.1_pre20161102.ebuild:
+  sci-libs/dcmtk:     Bump EAPI to 5
+
 *dcmtk-3.6.1_pre20161102 (23 Jan 2017)
 
   23 Jan 2017;  <gerddie@gentoo.org> +dcmtk-3.6.1_pre20161102.ebuild,
