@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -13,10 +13,11 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="gsl xmedcon fame volpack vistaio dicom debug doc jpeg2k"
+IUSE="+gsl +xmedcon +fame +ffmpeg +volpack +vistaio +dicom debug doc +jpeg2k"
 
 RDEPEND="
 >=x11-libs/gtk+-2.10:2
+ffmpeg? ( >=media-video/ffmpeg-3.2.4 )
 xmedcon? ( >=sci-misc/xmedcon-0.10 )
 jpeg2k? ( media-libs/openjpeg:2 )
 volpack? ( media-libs/volpack )
@@ -38,6 +39,7 @@ src_prepare () {
 	epatch "${FILESDIR}/${PN}-1.0.5-ffmpeg_2.9.patch"
 	epatch "${FILESDIR}/${PN}-1.0.5-gsl_2x.patch"
 	epatch "${FILESDIR}/${PN}-1.0.5-libc_2.23.patch"
+	epatch "${FILESDIR}/${PN}-1.0.5-ffmpeg-encode.patch"
 }
 
 src_configure () {
@@ -49,6 +51,7 @@ src_configure () {
 		$(use_enable xmedcon libmdc) \
 		$(use_enable fame libfametest) \
 		$(use_enable fame libfame) \
+                $(use_enable ffmpeg) \
 		$(use_enable jpeg2k libopenjp2) \
 		$(use_enable dicom libdcmdata) \
 		$(use_enable volpack libvolpack) \

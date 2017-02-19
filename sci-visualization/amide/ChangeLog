@@ -1,3 +1,10 @@
+*amide-1.0.5-r3 (19 Feb 2017)
+
+  19 Feb 2017;  <gerddie@gentoo.org> +amide-1.0.5-r3.ebuild,
+  +files/amide-1.0.5-ffmpeg-encode.patch, -amide-1.0.5-r2.ebuild:
+  sci-visualization/amide:    * add upstream patch for new ffmpeg encode, add
+  use flag for ffmpeg, set      minimum ffmpeg version to latest stable.
+
   09 Jan 2017;  <gerddie@gentoo.org> metadata.xml:
   sci-visualization:    Add maintainer type for various ebuilds
 
