@@ -2,6 +2,12 @@
 # Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*itk-4.11.0 (13 Mar 2017)
+
+  13 Mar 2017;  <gerddie@gentoo.org> +itk-4.11.0.ebuild:
+  sci-libs/itk:     New upstream version, disable IODCMTK because GDCM is used
+  for IO
+
 *itk-4.10.1 (24 Jan 2017)
 
   24 Jan 2017;  <gerddie@gentoo.org> +itk-4.10.1.ebuild, -itk-4.10.1-r1.ebuild:
