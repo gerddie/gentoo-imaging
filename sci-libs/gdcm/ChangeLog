@@ -1,3 +1,8 @@
+*gdcm-2.6.7 (13 Mar 2017)
+
+  13 Mar 2017;  <gerddie@gentoo.org> +gdcm-2.6.7.ebuild:
+  sci-libs/gdcm:          Add latest upstream version
+
 *gdcm-2.6.6 (28 Oct 2016)
 
   28 Oct 2016;  <gerddie@gentoo.org> +gdcm-2.6.6.ebuild, -gdcm-2.6.1.ebuild,
