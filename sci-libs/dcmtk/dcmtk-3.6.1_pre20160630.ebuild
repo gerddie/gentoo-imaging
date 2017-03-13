@@ -14,7 +14,7 @@ HOMEPAGE="http://dicom.offis.de/dcmtk.php.en"
 SRC_URI="http://dicom.offis.de/download/${PN}/snapshot/old/${PN}-${MY_PV}.tar.gz"
 LICENSE="BSD"
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="doc png ssl tcpd +threads tiff xml zlib iconv"
 
