@@ -1,3 +1,6 @@
+  13 Mar 2017;  <gerddie@gentoo.org> metadata.xml:
+  update metadata
+
 *vistaio-1.2.18 (03 Nov 2015)
 
   03 Nov 2015;  <gw.fossdev@gmail.com> vistaio-1.2.18.ebuild:
@@ -7,4 +10,3 @@
 
   30 Oct 2015;  <gw.fossdev@gmail.com> vistaio-1.2.16.ebuild:
   correct ebuild to satisfy repoman
-
