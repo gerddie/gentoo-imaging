@@ -1,6 +1,0 @@
-*nlopt-2.4.2-r1 (11 Nov 2015)
-
-  11 Nov 2015;  <gw.fossdev@gmail.com> +ChangeLog-2015,
-  +files/nlopt-2.3-as-needed.patch, +files/nlopt-2.3-pkgconfig.patch,
-  +files/nlopt-2.4-octave-4.0.patch, +metadata.xml, +nlopt-2.4.2-r1.ebuild:
-  sci-libs/nlopt: Add patch to compile with octave 4.0    Source: Debian package

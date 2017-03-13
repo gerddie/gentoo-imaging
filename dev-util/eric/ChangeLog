@@ -1,6 +1,0 @@
-*eric-6.0.10 (10 May 2016)
-*eric-6.1.5 (10 May 2016)
-
-  10 May 2016;  <gerddie@gentoo.org> +eric-6.0.10.ebuild, +eric-6.1.5.ebuild,
-  +files/eric6-icon-filename.patch, +metadata.xml:
-  dev-util/eric:          Add new ebuilds for eric
