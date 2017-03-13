@@ -1,3 +1,6 @@
+  13 Mar 2017;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20170228.ebuild:
+  sci-libs/dcmtk:    Add keywords
+
   13 Mar 2017;  <gerddie@gentoo.org> dcmtk-3.6.1_pre20160630.ebuild:
   sci-libs/dcmtk:        Add new version as masked
 
