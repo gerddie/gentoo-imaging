@@ -1,3 +1,9 @@
+*ginkgocadx-3.8.5 (13 Mar 2017)
+
+  13 Mar 2017;  <gerddie@gentoo.org> +ginkgocadx-3.8.5.ebuild,
+  -ginkgocadx-3.8.0.ebuild, -ginkgocadx-3.8.2.ebuild, ginkgocadx-3.8.4.ebuild:
+  sci-visualization/ginkgocadx:          Add new upstream version
+
 *ginkgocadx-3.8.4 (09 Jan 2017)
 
   09 Jan 2017;  <gerddie@gentoo.org> +ginkgocadx-3.8.4.ebuild, metadata.xml:
