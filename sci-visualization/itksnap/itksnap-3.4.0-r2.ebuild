@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -8,7 +8,7 @@ inherit eutils toolchain-funcs cmake-utils flag-o-matic
 
 DESCRIPTION="ITK snap tool for segmentation of medical data"
 HOMEPAGE="http://www.itksnap.org"
-SRC_URI="mirror://sourceforge/itk-snap/itksnap-source-3.2.0.tar.gz"
+SRC_URI="mirror://sourceforge/itk-snap/itksnap-source-${PV}.tar.gz"
 RESTRICT="primaryuri"
 
 LICENSE="GPL-3"
@@ -16,10 +16,10 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-append-cxxflags -fPIC -funroll-loops
+append-cxxflags -fPIC -funroll-loops -ftree-vectorize
 
-RDEPEND=">=sci-libs/itk-4.5.2
-		 >=sci-libs/vtk-6.2
+RDEPEND=">=sci-libs/itk-4.8.0
+		 >=sci-libs/vtk-7
 		 >=dev-qt/qtgui-5.4
 		 >=dev-qt/qtwidgets-5.4
 		 >=dev-qt/qtopengl-5.4
@@ -34,9 +34,8 @@ DEPEND="${RDEPEND}
 		  >=dev-util/cmake-2.8
 	"
 
-# unpack into versioned subdir because the tarball doesn't contain it
-src_unpack() {
-	mkdir "${P}"
-	cd "${P}"
-	unpack ${A}
-}
+PATCHES=(
+	"${FILESDIR}"/vtk_6_3.patch
+	"${FILESDIR}"/vtk7.patch
+	
+)

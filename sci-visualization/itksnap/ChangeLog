@@ -1,3 +1,9 @@
+*itksnap-3.4.0-r2 (15 Mar 2017)
+
+  15 Mar 2017;  <gerddie@gentoo.org> +files/vtk7.patch,
+  +itksnap-3.4.0-r2.ebuild, -itksnap-3.2.0.ebuild, itksnap-3.4.0-r1.ebuild:
+  sci-visualization/itksnap:    Add version and patch that conpiles with vtk-7
+
   09 Jan 2017;  <gerddie@gentoo.org> metadata.xml:
   sci-visualization:    Add maintainer type for various ebuilds
 
