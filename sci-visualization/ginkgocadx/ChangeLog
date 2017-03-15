@@ -1,3 +1,10 @@
+*ginkgocadx-3.8.5-r1 (15 Mar 2017)
+
+  15 Mar 2017;  <gerddie@gentoo.org> +files/vtk7.patch,
+  +ginkgocadx-3.8.5-r1.ebuild, -ginkgocadx-3.8.4.ebuild,
+  -ginkgocadx-3.8.5.ebuild:
+  sci-visualization/ginkgocadx:    Make it compile with vtk-7
+
 *ginkgocadx-3.8.5 (13 Mar 2017)
 
   13 Mar 2017;  <gerddie@gentoo.org> +ginkgocadx-3.8.5.ebuild,
