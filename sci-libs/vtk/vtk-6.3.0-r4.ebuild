@@ -18,11 +18,6 @@ DESCRIPTION="The Visualization Toolkit"
 HOMEPAGE="http://www.vtk.org/"
 SRC_URI="
 	http://www.${PN}.org/files/release/${SPV}/VTK-${PV}.tar.gz
-	doc? ( http://www.${PN}.org/files/release/${SPV}/${PN}DocHtml-${PV}.tar.gz )
-	test? (
-		http://www.${PN}.org/files/release/${SPV}/VTKData-${PV}.tar.gz
-		http://www.${PN}.org/files/release/${SPV}/VTKLargeData-${PV}.tar.gz
-		)
 	"
 
 LICENSE="BSD LGPL-2"
