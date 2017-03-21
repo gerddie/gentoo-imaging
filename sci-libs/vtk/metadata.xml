@@ -15,6 +15,7 @@
     <flag name="kaapi">Use <pkg>sci-libs/kaapi</pkg> to handle smp support</flag>
     <flag name="offscreen">Offscreen rendering through OSMesa</flag>
     <flag name="rendering">Building Redering modules</flag>
+    <flag name="opengl2">Enable new OpenGL2 rendering backend</flag>
     <flag name="tbb">Use <pkg>dev-cpp/tbb</pkg> to handle smp support</flag>
     <flag name="views">Building Views modules</flag>
     <flag name="web">Install web component</flag>

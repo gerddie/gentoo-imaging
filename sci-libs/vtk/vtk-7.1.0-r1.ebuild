@@ -28,7 +28,7 @@ KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
 SLOT="0"
 IUSE="
 	all-modules aqua boost doc examples imaging ffmpeg gdal java json kaapi mpi
-	mysql odbc offscreen postgres python qt5 rendering tbb test theora tk tcl
+	mysql odbc offscreen +opengl2 postgres python qt5 rendering tbb test theora tk tcl
 	video_cards_nvidia views web R +X xdmf2"
 
 REQUIRED_USE="
@@ -211,8 +211,8 @@ src_configure() {
 		-DVTK_USE_NVCONTROL=$(usex video_cards_nvidia)
 		-DModule_vtkFiltersStatisticsGnuR=$(usex R)
 		-DVTK_USE_X=$(usex X)
-		-DVTK_RENDERING_BACKEND=OpenGL
 	# IO
+
 		-DVTK_USE_FFMPEG_ENCODER=$(usex ffmpeg)
 		-DModule_vtkIOGDAL=$(usex gdal)
 		-DModule_vtkIOGeoJSON=$(usex json)
@@ -220,6 +220,13 @@ src_configure() {
 	# Apple stuff, does it really work?
 		-DVTK_USE_COCOA=$(usex aqua)
 	)
+
+	if  use opengl2; then
+		mycmakeargs+=( -DVTK_RENDERING_BACKEND=OpenGL2 )
+	else
+		mycmakeargs+=( -DVTK_RENDERING_BACKEND=OpenGL )
+	fi
+
 
 	if use examples || use test; then
 		mycmakeargs+=( -DBUILD_TESTING=ON )

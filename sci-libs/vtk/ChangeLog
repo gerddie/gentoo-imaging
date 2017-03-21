@@ -1,3 +1,6 @@
+  21 Mar 2017;  <gerddie@gentoo.org> metadata.xml, vtk-7.1.0-r1.ebuild:
+  sci-libs/vtk:      correct application of opengl2 use flag
+
 *vtk-7.1.0-r1 (15 Mar 2017)
 
   15 Mar 2017;  <gerddie@gentoo.org> +files/vtk-6.1.0-memset.patch,
