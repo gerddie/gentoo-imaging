@@ -5,7 +5,9 @@
     <email>gw.fossdev@gmail.com</email>
   </maintainer>
   <use>
+    <flag name="itpp">Enable plug-in for IT++ provided FastICA implementation</flag>
     <flag name="tbb">Use Intel threading building blocks</flag>
+    <flag name="vtk">Enable VTK image and mesh IO plugin</flag>
   </use>
   <longdescription lang="en">
     MIA provides a combination of command line tools, plug-ins, and libraries
