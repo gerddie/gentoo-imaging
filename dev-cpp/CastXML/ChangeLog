@@ -1,3 +1,9 @@
+*CastXML-0.0.0_pre6 (24 Mar 2017)
+
+  24 Mar 2017;  <gerddie@gentoo.org> +CastXML-0.0.0_pre6.ebuild:
+  dev-cpp/CastXML:    correct ebuild for llvm4 and update to latest    upstream
+  git
+
 *CastXML-0.0.0_pre5 (07 Dec 2016)
 
   07 Dec 2016;  <gerddie@gentoo.org> +CastXML-0.0.0_pre5.ebuild,
