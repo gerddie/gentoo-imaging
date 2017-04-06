@@ -1,3 +1,8 @@
+*itksnap-3.6.0 (06 Apr 2017)
+
+  06 Apr 2017;  <gerddie@gentoo.org> +itksnap-3.6.0.ebuild:
+  sci-visualization/itksnap:  +itksnap-3.6.0.ebuild:   - new upstream version
+
 *itksnap-3.4.0-r2 (15 Mar 2017)
 
   15 Mar 2017;  <gerddie@gentoo.org> +files/vtk7.patch,
