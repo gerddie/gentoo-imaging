@@ -16,12 +16,12 @@ DESCRIPTION="The Visualization Toolkit"
 HOMEPAGE="http://www.vtk.org/"
 SRC_URI="
 	http://www.vtk.org/files/release/${SPV}/VTK-${PV}.tar.gz
-	doc? ( http://www.vtk.org/files/release/${SPV}/vtkDocHtml-${PV}.tar.gz )
+	doc? ( http://www.vtk.org/files/release/${SPV}/vtkDocHtml-${PV}.tar.gz )"
 #	test? (
 #		http://www.vtk.org/files/release/${SPV}/VTKData-${PV}.tar.gz
 #		http://www.vtk.org/files/release/${SPV}/VTKLargeData-${PV}.tar.gz
 #		)
-	"
+#	"
 
 LICENSE="BSD LGPL-2"
 KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
