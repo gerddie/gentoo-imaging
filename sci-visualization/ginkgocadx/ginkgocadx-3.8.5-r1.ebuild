@@ -17,7 +17,7 @@ KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="
-	>=sci-libs/vtk-6.2[rendering]
+	>=sci-libs/vtk-6.2[rendering,-opengl]
 	>=sci-libs/itk-4.8
 	dev-db/sqlite
 	dev-libs/openssl:0
