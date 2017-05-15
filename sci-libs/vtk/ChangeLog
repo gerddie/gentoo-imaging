@@ -1,3 +1,7 @@
+  15 May 2017;  <gerddie@gentoo.org> vtk-7.1.0-r1.ebuild:
+  sci-libs/vtk:    Merge pull request to correctly disable data files in
+  vtk-7.1.0
+
 *vtk-7.1.1 (15 May 2017)
 
   15 May 2017;  <gerddie@gentoo.org> +vtk-7.1.1.ebuild:
