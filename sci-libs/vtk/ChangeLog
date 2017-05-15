@@ -1,3 +1,8 @@
+*vtk-7.1.1 (15 May 2017)
+
+  15 May 2017;  <gerddie@gentoo.org> +vtk-7.1.1.ebuild:
+  sci-libs/vtk:    New ebuild for v7.1.1, re-enable data files
+
   21 Mar 2017;  <gerddie@gentoo.org> metadata.xml, vtk-7.1.0-r1.ebuild:
   sci-libs/vtk:      correct application of opengl2 use flag
 
