@@ -27,7 +27,7 @@ DEPENDS="app-arch/xz-utils
 RDEPENDS="dev-cpp/eigen
 		  dev-cpp/libxml2
 		  tbb? ( dev-cpp/tbb )
-		  !tbb? ( sys-devel/gcc >= 5.3.0 )
+		  !tbb? ( >=sys-devel/gcc )
 		  dev-libs/boost
 		  sci-libs/fftw:3.0
 		  sci-libs/gsl
