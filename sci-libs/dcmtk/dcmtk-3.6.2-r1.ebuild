@@ -3,7 +3,7 @@
 
 EAPI="5"
 
-inherit cmake-utils eutils
+inherit cmake-utils eutils toolchain-funcs
 
 DESCRIPTION="The DICOM Toolkit"
 HOMEPAGE="http://dicom.offis.de/dcmtk.php.en"
@@ -49,8 +49,10 @@ src_configure() {
 		mycmakeargs="${mycmakeargs}
 		-DDCMTK_USE_CXX11_STL:BOOL=ON
 		-DDCMTK_ENABLE_CXX11:BOOL=ON"
-
-		 gcc-major-version >= 6 || die
+	
+		 local gcc_mv=$(gcc-major-version)
+		 elog "Using gcc major version $gcc_mv"
+		 [[ "${gcc_mv}" < "6" ]] && die "Require at least gcc-6 to compile with c++11 support"
 	fi
 
 	cmake-utils_src_configure

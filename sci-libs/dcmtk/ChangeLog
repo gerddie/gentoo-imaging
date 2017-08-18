@@ -1,3 +1,6 @@
+  18 Aug 2017;  <gerddie@gentoo.org> dcmtk-3.6.2-r1.ebuild:
+  Test the compiler used for build with c++11 enabled
+
 *dcmtk-3.6.2-r1 (18 Aug 2017)
 
   18 Aug 2017;  <gerddie@gentoo.org> +dcmtk-3.6.2-r1.ebuild, metadata.xml:
