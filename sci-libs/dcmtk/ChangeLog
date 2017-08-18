@@ -1,3 +1,8 @@
+*dcmtk-3.6.2-r1 (18 Aug 2017)
+
+  18 Aug 2017;  <gerddie@gentoo.org> +dcmtk-3.6.2-r1.ebuild, metadata.xml:
+  Check if we really use gcc >= 6 for compiling
+
 *dcmtk-3.6.2 (18 Aug 2017)
 
   18 Aug 2017;  <gerddie@gentoo.org> +dcmtk-3.6.2.ebuild:
