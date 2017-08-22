@@ -1,3 +1,6 @@
+  22 Aug 2017;  <gerddie@gentoo.org> dcmtk-3.6.2-r1.ebuild:
+  sci-libs/dcmtk:    Depend on either gcc>=6 or clang for c++11
+
   18 Aug 2017;  <gerddie@gentoo.org> dcmtk-3.6.2-r1.ebuild:
   Test the compiler used for build with c++11 enabled
 

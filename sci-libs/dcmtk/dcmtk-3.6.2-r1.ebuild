@@ -23,7 +23,7 @@ RDEPEND="
 	xml? ( dev-libs/libxml2:2 )
 	zlib? ( sys-libs/zlib )
 	iconv? ( virtual/libiconv )
-	c++11? ( >=sys-devel/gcc-6.3.0 )
+	c++11? ( || ( >=sys-devel/gcc-6.3.0 >=sys-devel/clang-3.9.1 ) )
 	"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
@@ -49,10 +49,15 @@ src_configure() {
 		mycmakeargs="${mycmakeargs}
 		-DDCMTK_USE_CXX11_STL:BOOL=ON
 		-DDCMTK_ENABLE_CXX11:BOOL=ON"
-	
-		 local gcc_mv=$(gcc-major-version)
-		 elog "Using gcc major version $gcc_mv"
-		 [[ "${gcc_mv}" < "6" ]] && die "Require at least gcc-6 to compile with c++11 support"
+
+		local compiler=$(tc-get-compiler-type)
+
+		elog "Compiling with ${compiler}"
+		if [[ "x${compiler}" == "xgcc" ]] ; then 
+	            local gcc_mv=$(gcc-major-version)
+		    elog "Using gcc major version $gcc_mv"
+		    [[ "${gcc_mv}" < "6" ]] && die "Require at least gcc-6 to compile with c++11 support"
+               fi
 	fi
 
 	cmake-utils_src_configure
