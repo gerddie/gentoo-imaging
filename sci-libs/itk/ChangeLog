@@ -2,6 +2,13 @@
 # Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*itk-4.12.2 (04 Oct 2017)
+
+  04 Oct 2017;  <gerddie@gentoo.org> +itk-4.12.2.ebuild, -itk-4.10.1.ebuild,
+  -itk-4.11.0.ebuild, -itk-4.12.0.ebuild:
+  sci-libs/itk:    new upstream 4.12.4, remove old ebuilds,    fix multilib-
+  strict Closes: #13
+
 *itk-4.12.0 (14 Jul 2017)
 
   14 Jul 2017;  <gerddie@gentoo.org> +itk-4.12.0.ebuild:

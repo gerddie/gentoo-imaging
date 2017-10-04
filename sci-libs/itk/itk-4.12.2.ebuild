@@ -99,6 +99,7 @@ src_configure() {
 		$(cmake-utils_use review Module_ITKReview)
 		$(cmake-utils_use itkv3compat ITKV3_COMPATIBILITY)
 		$(cmake-utils_use sse2 VNL_CONFIG_ENABLE_SSE2)
+		-DITK_INSTALL_LIBRARY_DIR:STRING=$(get_libdir)
 	)
 	if use fftw; then
 		mycmakeargs+=(
