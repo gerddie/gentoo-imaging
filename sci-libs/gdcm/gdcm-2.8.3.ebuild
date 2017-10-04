@@ -6,7 +6,7 @@ EAPI=5
 
 PYTHON_COMPAT=( python2_7 )
 
-inherit  eutils  cmake-utils python-single-r1
+inherit  eutils  cmake-utils python-single-r1 multilib
 
 PYVER="2.7"
 
@@ -62,7 +62,8 @@ src_configure() {
 		-DGDCM_USE_PARAVIEW:BOOL=OFF \
 		-DGDCM_USE_ACTIVIZ:BOOL=OFF \
 		-DGDCM_USE_SYSTEM_PAPYRUS3:BOOL=OFF \
-		-DGDCM_USE_SYSTEM_SOCKETXX:BOOL=OFF
+		-DGDCM_USE_SYSTEM_SOCKETXX:BOOL=OFF \
+		-DGDCM_INSTALL_LIB_DIR:STRING=$(get_libdir)
 	)
 
 	if use vtk; then

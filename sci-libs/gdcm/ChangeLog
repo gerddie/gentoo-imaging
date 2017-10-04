@@ -1,3 +1,10 @@
+*gdcm-2.8.3 (04 Oct 2017)
+
+  04 Oct 2017;  <gerddie@gentoo.org> +gdcm-2.8.3.ebuild, -gdcm-2.6.6.ebuild,
+  -gdcm-2.6.7.ebuild, -gdcm-2.8.0.ebuild, -gdcm-2.8.2.ebuild:
+  sci-libs/gdcm:     New upstream version, +properly install into multilib
+  target directory
+
 *gdcm-2.8.2 (01 Aug 2017)
 
   01 Aug 2017;  <gerddie@gentoo.org> +gdcm-2.8.2.ebuild:
