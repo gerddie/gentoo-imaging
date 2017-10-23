@@ -1,3 +1,9 @@
+*gdcm-2.8.3-r1 (23 Oct 2017)
+
+  23 Oct 2017;  <gerddie@gentoo.org> +gdcm-2.8.3-r1.ebuild, -gdcm-2.8.3.ebuild:
+  sci-libs/gdcm:  force -std=c++11 since the header included from libpoppler
+  require it also for g++-5.4 which does  not default zo c++11.
+
 *gdcm-2.8.3 (04 Oct 2017)
 
   04 Oct 2017;  <gerddie@gentoo.org> +gdcm-2.8.3.ebuild, -gdcm-2.6.6.ebuild,

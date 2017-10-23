@@ -43,6 +43,7 @@ DEPEND="app-arch/xz-utils
 	${RDEPEND}
 "
 src_configure() {
+	append-cxxflags -std=c++11
 	local mycmakeargs=(
 		-DGDCM_DOXYGEN_NO_FOOTER:BOOL=ON \
 		-DGDCM_BUILD_APPLICATIONS:BOOL=ON \
@@ -78,6 +79,12 @@ src_configure() {
 			-DGDCM_WRAP_PYTHON:BOOL=ON
 		)
 	fi
+	
+	if use doc; then
+		mycmakeargs+=(
+			-DGDCM_DOCUMENTATION:BOOL=ON
+		)
+	fi 
 
 	cmake-utils_src_configure
 }
