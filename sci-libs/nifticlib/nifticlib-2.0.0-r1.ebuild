@@ -20,6 +20,7 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/findlibm.patch
+	epatch "${FILESDIR}"/multilib-install-dir.patch
 }
 
 src_configure() {
