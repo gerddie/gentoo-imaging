@@ -1,0 +1,4 @@
+*libdrm-2.4.88 (06 Nov 2017)
+
+  06 Nov 2017;  <gerddie@gentoo.org> +libdrm-2.4.88.ebuild, +metadata.xml:
+  x11-libs/libdrm:    Add version 2.4.88
