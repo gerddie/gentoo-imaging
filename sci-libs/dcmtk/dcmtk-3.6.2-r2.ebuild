@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/soversion_abi.patch
+	"${FILESDIR}"/gcc6-drop-cxx11-flags.patch
 )
 
 src_configure() {
