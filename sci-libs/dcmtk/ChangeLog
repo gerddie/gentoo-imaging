@@ -1,3 +1,9 @@
+*dcmtk-3.6.2-r2 (15 Nov 2017)
+
+  15 Nov 2017;  <gerddie@gentoo.org> +dcmtk-3.6.2-r2.ebuild,
+  -dcmtk-3.6.2-r1.ebuild:
+  sci-libs/dcmtk:  Add support for multilib.
+
   22 Aug 2017;  <gerddie@gentoo.org> dcmtk-3.6.2-r1.ebuild:
   sci-libs/dcmtk:    Depend on either gcc>=6 or clang for c++11
 
