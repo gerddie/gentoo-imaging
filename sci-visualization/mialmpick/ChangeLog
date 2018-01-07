@@ -1,3 +1,8 @@
+*mialmpick-0.2.14 (07 Jan 2018)
+
+  07 Jan 2018;  <gerddie@gentoo.org> +mialmpick-0.2.14.ebuild:
+  sci-visualization/mialmpick:    Add version 0.2.14
+
   29 Jan 2017;  <gerddie@gentoo.org> mialmpick-0.2.9.ebuild:
   sci-visualization/mialmpick:      Bump EAPI to 5
 
