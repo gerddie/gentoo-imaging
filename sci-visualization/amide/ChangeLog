@@ -1,3 +1,10 @@
+*amide-1.0.5-r4 (09 Feb 2018)
+
+  09 Feb 2018;  <gerddie@gentoo.org> +amide-1.0.5-r4.ebuild,
+  -amide-1.0.5-r3.ebuild:
+  sci-visualization/amide:    * Add gnome libraries build dependencies, Closes:
+  #15
+
 *amide-1.0.5-r3 (19 Feb 2017)
 
   19 Feb 2017;  <gerddie@gentoo.org> +amide-1.0.5-r3.ebuild,

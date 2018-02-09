@@ -1,6 +1,5 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="5"
 
@@ -17,6 +16,9 @@ IUSE="+gsl +xmedcon +fame +ffmpeg +volpack +vistaio +dicom debug doc +jpeg2k"
 
 RDEPEND="
 >=x11-libs/gtk+-2.10:2
+gnome-base/libgnomecanvas
+gnome-base/gnome-vfs
+gnome-base/gconf
 ffmpeg? ( >=media-video/ffmpeg-3.2.4 )
 xmedcon? ( >=sci-misc/xmedcon-0.10 )
 jpeg2k? ( media-libs/openjpeg:2 )
