@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id:$
 
@@ -10,12 +10,11 @@ inherit eutils toolchain-funcs cmake-utils python-single-r1
 
 MYPN=InsightToolkit
 MYP=${MYPN}-${PV}
-DOC_PV=4.10.0
 
 DESCRIPTION="NLM Insight Segmentation and Registration Toolkit"
 HOMEPAGE="http://www.itk.org"
 SRC_URI="mirror://sourceforge/${PN}/${MYP}.tar.xz
-	doc? ( mirror://sourceforge/${PN}/InsightDoxygenDocHtml-${DOC_PV}.tar.gz )"
+	doc? ( mirror://sourceforge/${PN}/InsightDoxygenDocHtml-${PV}.tar.gz )"
 RESTRICT="primaryuri"
 
 LICENSE="Apache-2.0"

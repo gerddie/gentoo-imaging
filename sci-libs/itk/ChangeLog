@@ -1,6 +1,11 @@
 # ChangeLog for sci-libs/itk
-# Copyright 1999-2017 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2018 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*itk-4.13.0 (09 Feb 2018)
+
+  09 Feb 2018;  <gerddie@gentoo.org> +itk-4.13.0.ebuild, -itk-4.12.2.ebuild:
+  sci-libs/itk:    * Drop 4.12.2*   * Add version 4.13.0
 
 *itk-4.12.2 (04 Oct 2017)
 
