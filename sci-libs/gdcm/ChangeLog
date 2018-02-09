@@ -1,3 +1,11 @@
+*gdcm-2.8.4 (09 Feb 2018)
+
+  09 Feb 2018;  <gerddie@gentoo.org> +files/gdcm-fix-xslt-maxdepth.patch,
+  +files/unforce_cxx98.patch, +gdcm-2.8.4.ebuild, -gdcm-2.8.3-r1.ebuild,
+  metadata.xml:
+  sci-libs/gdcm:  * remove v2.8.3-r1 * add 2.8.4  * add patch to unforce c++-98
+  * add patch to set --maxdepth for xslproc, Closes: #14
+
 *gdcm-2.8.3-r1 (23 Oct 2017)
 
   23 Oct 2017;  <gerddie@gentoo.org> +gdcm-2.8.3-r1.ebuild, -gdcm-2.8.3.ebuild:

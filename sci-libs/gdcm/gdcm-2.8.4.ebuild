@@ -1,6 +1,5 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -42,6 +41,12 @@ DEPEND="app-arch/xz-utils
 	)
 	${RDEPEND}
 "
+
+PATCHES=(
+	"${FILESDIR}/gdcm-fix-xslt-maxdepth.patch"
+	"${FILESDIR}/unforce_cxx98.patch"
+)
+
 src_configure() {
 	append-cxxflags -std=c++11
 	local mycmakeargs=(
@@ -79,12 +84,12 @@ src_configure() {
 			-DGDCM_WRAP_PYTHON:BOOL=ON
 		)
 	fi
-	
+
 	if use doc; then
 		mycmakeargs+=(
 			-DGDCM_DOCUMENTATION:BOOL=ON
 		)
-	fi 
+	fi
 
 	cmake-utils_src_configure
 }
