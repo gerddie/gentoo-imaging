@@ -1,3 +1,10 @@
+*mia-2.4.6 (11 Feb 2018)
+
+  11 Feb 2018;  <gerddie@gentoo.org> +mia-2.4.6.ebuild, -mia-2.2.6.ebuild,
+  -mia-2.2.7.ebuild, -mia-2.4.3.ebuild, -mia-2.4.4.ebuild, metadata.xml:
+  sci-misc/mia:    * Add version 2.4.6,    * remove old versions   * correct
+  dependencies of ebuild
+
 *mia-2.4.4 (22 Mar 2017)
 
   22 Mar 2017;  <gerddie@gentoo.org> +mia-2.4.4.ebuild, metadata.xml:

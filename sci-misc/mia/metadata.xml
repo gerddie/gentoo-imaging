@@ -7,6 +7,7 @@
   <use>
     <flag name="itpp">Enable plug-in for IT++ provided FastICA implementation</flag>
     <flag name="tbb">Use Intel threading building blocks</flag>
+    <flag name="gts">Enable support for Gnu triangulated surfaces</flag>
     <flag name="vtk">Enable VTK image and mesh IO plugin</flag>
   </use>
   <longdescription lang="en">
