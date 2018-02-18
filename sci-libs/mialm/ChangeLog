@@ -1,3 +1,6 @@
+  18 Feb 2018;  <gerddie@gentoo.org> mialm-1.0.8.ebuild:
+  sci-libs/mialm:    Update copyright year and remove old CVS entry
+
   13 Mar 2017;  <gerddie@gentoo.org> metadata.xml:
   Update metadata
 
