@@ -1,3 +1,10 @@
+*itksnap-3.6.0-r1 (18 Feb 2018)
+
+  18 Feb 2018;  <gerddie@gentoo.org> +itksnap-3.6.0-r1.ebuild,
+  -itksnap-3.4.0-r1.ebuild, -itksnap-3.4.0-r2.ebuild, -itksnap-3.6.0.ebuild:
+  sci-visualization/itksnap:    3.6.0-r1:   * remove version 3.4   * add
+  itk3compat as requirement to dep sci-libs/itk
+
 *itksnap-3.6.0 (06 Apr 2017)
 
   06 Apr 2017;  <gerddie@gentoo.org> +itksnap-3.6.0.ebuild:
