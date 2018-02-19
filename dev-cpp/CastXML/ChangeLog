@@ -1,3 +1,11 @@
+*CastXML-0.0.0_pre7 (19 Feb 2018)
+
+  19 Feb 2018;  <gerddie@gentoo.org> +CastXML-0.0.0_pre7.ebuild,
+  +files/0001-Also-search-for-the-clang-resource-directory-in-a-si.patch,
+  -CastXML-0.0.0_pre5.ebuild, -CastXML-0.0.0_pre6.ebuild:
+  dev-cpp/CastXML:  move to lastest upstream snapshot and add patch to find
+  clang resoureces without  hardcoding versions or path names. Closes #17
+
 *CastXML-0.0.0_pre6 (24 Mar 2017)
 
   24 Mar 2017;  <gerddie@gentoo.org> +CastXML-0.0.0_pre6.ebuild:

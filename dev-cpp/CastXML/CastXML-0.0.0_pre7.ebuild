@@ -1,8 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit  cmake-utils
 
@@ -19,13 +19,10 @@ DEPENDS="${RDEPENDS}
 
 RDEPENDS="dev-libs/glib:2
 		  dev-libs/libxml2
-		  sys-devel/llvm:4
+		  sys-devel/llvm:=
 	"
 
-src_configure() {
-	local mycmakeargs=(
-		-DLLVM_DIR=/usr/lib/llvm/4/lib64/cmake/llvm/
-		-DCLANG_RESOURCE_DIR=/usr/lib/clang/4.0.0
-	)
-	cmake-utils_src_configure
-}
+PATCHES=(
+	"${FILESDIR}/0001-Also-search-for-the-clang-resource-directory-in-a-si.patch"
+)
+
