@@ -1,3 +1,8 @@
+*libdrm-2.4.90 (21 Feb 2018)
+
+  21 Feb 2018;  <gerddie@gentoo.org> +libdrm-2.4.90.ebuild:
+  x11-libs/libdrm: Add version 2.4.90
+
 *libdrm-2.4.89 (07 Jan 2018)
 
   07 Jan 2018;  <gerddie@gentoo.org> +libdrm-2.4.89.ebuild,
