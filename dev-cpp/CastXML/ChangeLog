@@ -1,3 +1,8 @@
+*CastXML-0.0.0_pre8 (18 Mar 2018)
+
+  18 Mar 2018;  <gerddie@gentoo.org> +CastXML-0.0.0_pre8.ebuild:
+  dev-cpp/CastXML: New upstream snapshot 0.0.0_pre8
+
 *CastXML-0.0.0_pre7 (19 Feb 2018)
 
   19 Feb 2018;  <gerddie@gentoo.org> +CastXML-0.0.0_pre7.ebuild,
