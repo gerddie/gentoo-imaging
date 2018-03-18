@@ -14,5 +14,6 @@
     <flag name="review">Enable support for modules under review</flag>
     <flag name="sse2">Enable support for extra SSE2 optimizations</flag>
     <flag name="vtkglue">Add support for connecting with VTK</flag>
+    <flag name="bridgenumpy">Build external module BridgeNumPy (requires life internet connection during build)</flag>
   </use>
 </pkgmetadata>

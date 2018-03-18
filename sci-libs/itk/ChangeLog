@@ -2,6 +2,13 @@
 # Copyright 1999-2018 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*itk-4.13.0-r1 (18 Mar 2018)
+
+  18 Mar 2018;  <gerddie@gentoo.org> +itk-4.13.0-r1.ebuild, -itk-4.13.0.ebuild,
+  metadata.xml:
+  sci-libs/itk:          * Add useflag bridgenumpy to support building with this
+  externam module
+
 *itk-4.13.0 (09 Feb 2018)
 
   09 Feb 2018;  <gerddie@gentoo.org> +itk-4.13.0.ebuild, -itk-4.12.2.ebuild:

@@ -1,6 +1,5 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id:$
 
 EAPI=5
 
@@ -20,7 +19,7 @@ RESTRICT="primaryuri"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="debug doc examples fftw itkv3compat python review sse2 test vtkglue"
+IUSE="debug doc examples fftw itkv3compat python review sse2 test vtkglue -bridgenumpy"
 
 RDEPEND="
 	dev-libs/double-conversion:0=
@@ -65,6 +64,12 @@ pkg_pretend() {
 		elog "you want to create bindings for by setting"
 		elog "    ITK_WRAP_DIMS=X;Y;Z..."
 		elog "in make.conf, default is 2;3 for 2D and 3D data"
+		if use bridgenumpy; then
+                        ewarn " "
+			ewarn "Because BridgeNumPy will be fetched from the internet enabling"
+			ewarn "it requires a life internet connection during the build."
+			ewarn " "
+		fi
 	fi
 }
 
@@ -86,11 +91,9 @@ src_configure() {
 		-DITK_USE_SYSTEM_TIFF=ON
 		-DITK_USE_SYSTEM_ZLIB=ON
 		-DITK_BUILD_DEFAULT_MODULES=ON
-		-DITK_FORBID_DOWNLOADS=ON
 		-DITK_COMPUTER_MEMORY_SIZE="${ITK_COMPUTER_MEMORY_SIZE:-1}"
-				-DModule_ITKDCMTK=ON
-				-DModule_ITKIODCMTK=OFF
-				-DITK_FORBID_DOWNLOADS=ON
+		-DModule_ITKDCMTK=ON
+		-DModule_ITKIODCMTK=OFF
 		-DWRAP_ITK_JAVA=OFF
 		-DWRAP_ITK_TCL=OFF
 		$(cmake-utils_use_build test TESTING)
@@ -100,6 +103,7 @@ src_configure() {
 		$(cmake-utils_use sse2 VNL_CONFIG_ENABLE_SSE2)
 		-DITK_INSTALL_LIBRARY_DIR:STRING=$(get_libdir)
 	)
+
 	if use fftw; then
 		mycmakeargs+=(
 			-DUSE_FFTWD=ON
@@ -121,9 +125,21 @@ src_configure() {
 			-DITK_WRAP_PYTHON=ON
 			-DITK_WRAP_DIMS="${ITK_WRAP_DIMS:-2;3}"
 		)
+		if use bridgenumpy; then
+			mycmakeargs+=(
+				-DITK_FORBID_DOWNLOADS=OFF
+		        	-DModule_BridgeNumPy:BOOL=ON
+			)
+		else
+			mycmakeargs+=(
+				-DITK_FORBID_DOWNLOADS=ON
+			        -DModule_BridgeNumPy:BOOL=OFF
+			)
+		fi
 	else
 		mycmakeargs+=(
 			-DITK_WRAP_PYTHON=OFF
+			-DITK_FORBID_DOWNLOADS=ON
 		)
 	fi
 	cmake-utils_src_configure
