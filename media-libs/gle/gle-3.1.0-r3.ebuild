@@ -1,8 +1,7 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gle/gle-3.1.0-r2.ebuild,v 1.2 2011/01/05 10:39:40 xarthisius Exp $
 
-EAPI=3
+EAPI=5
 
 inherit autotools autotools-utils multilib
 
@@ -19,7 +18,7 @@ RDEPEND="virtual/opengl
 	media-libs/freeglut
 	app-eselect/eselect-opengl"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 PATCHES=( "${FILESDIR}/${P}-autotools-r1.patch" )
 DOCS=( AUTHORS README )
