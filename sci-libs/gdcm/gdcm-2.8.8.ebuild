@@ -43,6 +43,7 @@ DEPEND="app-arch/xz-utils
 "
 
 PATCHES=(
+	"${FILESDIR}/gdcm-fix-xslt-maxdepth.patch"
 	"${FILESDIR}/unforce_cxx98.patch"
 )
 
