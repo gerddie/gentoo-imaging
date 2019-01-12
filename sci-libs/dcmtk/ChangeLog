@@ -1,3 +1,8 @@
+*dcmtk-3.6.4 (12 Jan 2019)
+
+  12 Jan 2019;  <gerddie@gentoo.org> +dcmtk-3.6.4.ebuild:
+  sci-libs/dcmtk:   New upstream version 3.6.4
+
   15 Nov 2017;  <gerddie@gentoo.org> +files/gcc6-drop-cxx11-flags.patch,
   dcmtk-3.6.2-r2.ebuild:
   sci-libs/dcmtk:  Add patch to not force -std=c++11 if it is the default of the
