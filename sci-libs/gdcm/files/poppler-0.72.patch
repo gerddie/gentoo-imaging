@@ -1,0 +1,26 @@
+diff --git a/Applications/Cxx/gdcminfo.cxx b/Applications/Cxx/gdcminfo.cxx
+index f8f1c79..7d33985 100644
+--- a/Applications/Cxx/gdcminfo.cxx
++++ b/Applications/Cxx/gdcminfo.cxx
+@@ -202,7 +202,7 @@ static std::string getInfoDate(Dict *infoDict, const char *key)
+ #endif
+     {
+     const GooString* gs = obj.getString();
+-    s = gs->getCString();
++    s = gs->c_str();
+     if (s[0] == 'D' && s[1] == ':')
+       {
+       s += 2;
+diff --git a/Applications/Cxx/gdcmpdf.cxx b/Applications/Cxx/gdcmpdf.cxx
+index 09b31c1..15220a3 100644
+--- a/Applications/Cxx/gdcmpdf.cxx
++++ b/Applications/Cxx/gdcmpdf.cxx
+@@ -50,7 +50,7 @@ static std::string getInfoDate(Dict *infoDict, const char *key)
+ #endif
+     {
+     const GooString* gs = obj.getString();
+-    s = gs->getCString();
++    s = gs->c_str();
+     if (s[0] == 'D' && s[1] == ':')
+       {
+       s += 2;
