@@ -51,6 +51,7 @@ PATCHES=(
 	"${FILESDIR}/flatStructuringElementTest_fix_rescale.patch"
 	"${FILESDIR}/ITKv3MultiResImageRegistrationTest_correct.patch"
 	"${FILESDIR}/itk4.10-enable-system-nifti.patch"
+	"${FILESDIR}/remove_gcc_version_test.patch"
 )
 
 pkg_pretend() {
