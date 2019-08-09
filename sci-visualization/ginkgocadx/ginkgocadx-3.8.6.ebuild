@@ -21,7 +21,7 @@ DEPEND="
 	dev-db/sqlite
 	dev-libs/openssl:0
 	|| ( >=sci-libs/dcmtk-3.6.1_pre20150924 >=sci-libs/dcmtk-3.6.2-r1[c++11] )
-	>=x11-libs/wxGTK-3.0.1:3.0[opengl]
+	>=x11-libs/wxGTK-3.0.1:3.0-gtk3[opengl]
 	x11-libs/gtk+:2
 	!media-gfx/ginkgocadx
 	"
