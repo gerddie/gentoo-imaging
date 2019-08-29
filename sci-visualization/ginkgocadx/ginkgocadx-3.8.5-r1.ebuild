@@ -13,7 +13,7 @@ RESTRICT="primaryuri"
 
 LICENSE="LGPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
@@ -30,9 +30,7 @@ RDEPEND="${DEPEND}"
 
 PATCHES=(
 	"${FILESDIR}"/vtk7.patch
-	
 )
-
 
 pkg_setup() {
 	[ `wx-config --release` = 3.0 ] || die "Pick wxwidgets-3.0 in 'eselect wxwidgets'"
