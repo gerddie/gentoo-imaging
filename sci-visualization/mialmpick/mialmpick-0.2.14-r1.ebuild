@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -20,10 +20,10 @@ RDEPEND="
 >=sci-libs/mialm-1.0.8
 media-libs/libpng
 x11-libs/gtkglext
-gnome-base/libgnomeui
+dev-libs/popt
 x11-libs/gtk+:2
+gnome-base/libglade
 "
-
 DEPENDS="app-arch/xz-utils
 		${RDEPENDS}
 	"
