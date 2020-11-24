@@ -27,17 +27,6 @@ DEPEND="${RDEPEND}
 	dev-util/meson
 	test? ( >=dev-libs/check-0.9.4 )"
 
-src_unpack() {
-   unpack ${P}.tar.gz
-   mv ${PN}-${P} ${P}
-}
-
-
-src_prepare() {
-	default
-	[[ -e configure ]] || eautoreconf
-}
-
 src_configure()  {
     local emesonargs=(
     $(meson_use test build-tests)
